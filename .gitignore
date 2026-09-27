@@ -1,0 +1,6 @@
+# Minecraft backup ignores — zips live on Releases, secrets never committed
+*.zip
+mods/
+.env
+mc-data/
+*.jar
