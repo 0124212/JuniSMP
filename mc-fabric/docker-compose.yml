@@ -38,12 +38,24 @@ services:
         farmers-delight-refabricated
         harvest-simplified
         more-delight
+        ubes-delight
+        rustic-delight
+        spanish-delight-refabricated
         appleskin
         dungeons-and-taverns
         towns-and-towers
         explorify
         repurposed-structures-fabric
         explorations
+        waystones
+        veinminer
+        fallingtree
+        adorn
+        macaws-furniture
+        blockus
+        modern-decorations-mod
+        additional-lanterns
+        macaws-lights-and-lamps
   playit:
     image: ghcr.io/playit-cloud/playit-agent:latest
     restart: unless-stopped
