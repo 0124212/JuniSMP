@@ -16,8 +16,12 @@ Prism Import zips — grab the latest from **Releases** (v4.0: 43 mods).
 
 ## Server vs client mods
 
-Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 32 mods) =
-perf: fabric-api, lithium, ferrite-core, krypton, c2me-fabric, carpet;
+Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 38 mods) =
+perf: fabric-api, lithium, ferrite-core, krypton, c2me-fabric, carpet,
+spark, vmp-fabric, alternate-current, noisiumforked, ksyxis, servercore;
+JVM: 6G Aikar flags + explicit `-Xms6G -Xmx6G -XX:+UseG1GC`;
+properties: view-distance=7, simulation-distance=4, sync-chunk-writes=false,
+max-chained-neighbor-updates=10000 (via itzg env vars, no extra files);
 admin/world: luckperms, chunky, skill-proficiencies; food: farmers-delight +
 ubes/rustic/spanish/more delights, harvest-simplified, appleskin; worldgen:
 dungeons-and-taverns, towns-and-towers, explorify, repurposed-structures,

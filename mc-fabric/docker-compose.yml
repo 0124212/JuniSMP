@@ -22,6 +22,7 @@ services:
       FABRIC_LOADER_VERSION: "0.19.5"
       MEMORY: 6G
       USE_AIKAR_FLAGS: "true"
+      JVM_OPTS: "-Xms6G -Xmx6G -XX:+UseG1GC"
       MAX_PLAYERS: 20
       MODE: survival
       DIFFICULTY: normal
@@ -29,7 +30,9 @@ services:
       ENABLE_RCON: "true"
       RCON_PASSWORD: ${RCON_PASSWORD:?create /root/mc-fabric/.env containing RCON_PASSWORD=<secret>}
       VIEW_DISTANCE: 7
-      SIMULATION_DISTANCE: 6
+      SIMULATION_DISTANCE: 4
+      SYNC_CHUNK_WRITES: "false"
+      MAX_CHAINED_NEIGHBOR_UPDATES: 10000
       ENABLE_AUTOPAUSE: "false"
       MODRINTH_PROJECTS: |
         fabric-api
@@ -41,6 +44,12 @@ services:
         krypton
         c2me-fabric
         carpet
+        spark
+        vmp-fabric
+        alternate-current
+        noisiumforked
+        ksyxis
+        servercore
         farmers-delight-refabricated
         harvest-simplified
         more-delight
