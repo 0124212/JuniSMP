@@ -57,6 +57,9 @@ services:
         rustic-delight
         spanish-delight-refabricated
         appleskin
+        brewery
+        chefs-delight
+        crate-delight
         dungeons-and-taverns
         towns-and-towers
         explorify
@@ -70,6 +73,8 @@ services:
         ct-overhaul-village
         hopo-better-mineshaft
         hopo-better-underwater-ruins
+        moogs-voyager-structures
+        mes-moogs-end-structures
         natures-compass
         explorers-compass
         travelersbackpack
@@ -77,6 +82,12 @@ services:
         clumps
         universal-graves
         friends-and-foes
+        double-doors
+        open-parties-and-claims
+        styled-chat
+        crafting-tweaks
+        toms-storage
+        storagedrawers
         waystones
         veinminer
         fallingtree
@@ -90,6 +101,9 @@ services:
         macaws-bridges
         macaws-windows
         macaws-roofs
+        rechiseled
+        diagonal-fences
+        skniros-furniture
         bluemap
         pl3xmap
   playit:
