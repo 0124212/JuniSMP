@@ -16,17 +16,20 @@ Prism Import zips — grab the latest from **Releases** (v4.0: 43 mods).
 
 ## Server vs client mods
 
-Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot) = all
-worldgen/structure/food/server mods: fabric-api, luckperms, chunky,
-lithium, ferrite-core, skill-proficiencies, krypton, farmers-delight +
-ubes/rustic/spanish/more delights, harvest-simplified, appleskin,
+Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 30 mods) =
+perf: fabric-api, lithium, ferrite-core, krypton, c2me-fabric, carpet;
+admin/world: luckperms, chunky, skill-proficiencies; food: farmers-delight +
+ubes/rustic/spanish/more delights, harvest-simplified, appleskin; worldgen:
 dungeons-and-taverns, towns-and-towers, explorify, repurposed-structures,
-explorations, waystones, veinminer, fallingtree, adorn, macaws-furniture,
-blockus, modern-decorations-mod, additional-lanterns, macaws-lights.
+explorations; gameplay: waystones, veinminer, fallingtree; decoration:
+adorn, macaws-furniture, blockus, modern-decorations-mod,
+additional-lanterns, macaws-lights.
+(modernfix skipped: no MC 26.2 build — latest supports 26.1.2.)
 
-Client-only (in the Prism zip, NOT on the server): sodium, sodium-extra,
-iris, rei, immediatelyfast, entityculling, inventory-sorter/profiles-next/
-management. Don't add these to `MODRINTH_PROJECTS`.
+Client-only (in the Prism zip, NOT on the server; 34 pinned entries):
+sodium, sodium-extra, iris, reeses-sodium-options, rei, immediatelyfast,
+entityculling, inventory-sorter/profiles-next/management. Don't add these
+to `MODRINTH_PROJECTS`.
 
 ## Run the server
 

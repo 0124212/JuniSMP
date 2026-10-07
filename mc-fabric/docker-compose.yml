@@ -35,6 +35,8 @@ services:
         ferrite-core
         skill-proficiencies
         krypton
+        c2me-fabric
+        carpet
         farmers-delight-refabricated
         harvest-simplified
         more-delight

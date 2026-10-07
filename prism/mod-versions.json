@@ -83,6 +83,12 @@
     "size": 1885572,
     "url": "https://cdn.modrinth.com/data/AANobbMI/versions/xJZxADzI/sodium-fabric-0.9.2%2Bmc26.2.jar"
   },
+  "reeses-sodium-options": {
+    "version": "mc26.2-2.2.4+fabric",
+    "file": "reeses-sodium-options-fabric-2.2.4+mc26.2.jar",
+    "size": 257483,
+    "url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/nnz8j4Hu/reeses-sodium-options-fabric-2.2.4%2Bmc26.2.jar"
+  },
   "sodium-extra": {
     "version": "mc26.2-0.9.4+fabric",
     "file": "sodium-extra-fabric-0.9.4+mc26.2.jar",
