@@ -16,7 +16,7 @@ Prism Import zips — grab the latest from **Releases** (v4.0: 43 mods).
 
 ## Server vs client mods
 
-Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 38 mods) =
+Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 49 mods) =
 perf: fabric-api, lithium, ferrite-core, krypton, c2me-fabric, carpet,
 spark, vmp-fabric, alternate-current, noisiumforked, ksyxis, servercore;
 JVM: 6G Aikar flags + explicit `-Xms6G -Xmx6G -XX:+UseG1GC`;
@@ -25,7 +25,12 @@ max-chained-neighbor-updates=10000 (via itzg env vars, no extra files);
 admin/world: luckperms, chunky, skill-proficiencies; food: farmers-delight +
 ubes/rustic/spanish/more delights, harvest-simplified, appleskin; worldgen:
 dungeons-and-taverns, towns-and-towers, explorify, repurposed-structures,
-explorations; gameplay: waystones, veinminer, fallingtree; decoration:
+explorations; exploration: terralith, tectonic (picked over lithosphere —
+overlapping terrain engines), incendium (26.2 builds alpha-only: 5.5.1),
+nullscape, structory, ct-overhaul-village, hopo-better-mineshaft,
+hopo-better-underwater-ruins, natures-compass, explorers-compass,
+travelersbackpack (these three also required client-side — in the Prism
+pack); gameplay: waystones, veinminer, fallingtree; decoration:
 adorn, macaws-furniture, blockus, modern-decorations-mod,
 additional-lanterns, macaws-lights; maps: bluemap (:8100 3D web map),
 pl3xmap (:8080 2D web map) — configs persisted in ./bluemap, ./Pl3xMap.
@@ -35,6 +40,14 @@ Client-only (in the Prism zip, NOT on the server; 34 pinned entries):
 sodium, sodium-extra, iris, reeses-sodium-options, rei, immediatelyfast,
 entityculling, inventory-sorter/profiles-next/management. Don't add these
 to `MODRINTH_PROJECTS`.
+
+Client-required (in BOTH compose and the Prism zip — players must install;
+37 pinned entries): natures-compass, explorers-compass, travelersbackpack.
+
+> Worldgen caveat: terralith/tectonic/incendium/nullscape only affect
+> FRESH chunks — the existing world keeps old terrain, so expect visible
+> chunk borders where new meets old. Recommend Chunky pregen for new areas
+> (`chunky radius 5000 world`, `chunky start`) before exploring far.
 
 ## Run the server
 

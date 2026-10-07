@@ -190,5 +190,23 @@
     "file": "mcw-lights-1.1.5-mc26.2fabric.jar",
     "size": 545998,
     "url": "https://cdn.modrinth.com/data/w4an97C2/versions/pgtedKkN/mcw-lights-1.1.5-mc26.2fabric.jar"
+  },
+  "natures-compass": {
+    "version": "26.2-2.5.1-fabric",
+    "file": "NaturesCompass-26.2-2.5.1-fabric.jar",
+    "size": 232686,
+    "url": "https://cdn.modrinth.com/data/fPetb5Kh/versions/1X6iEfOy/NaturesCompass-26.2-2.5.1-fabric.jar"
+  },
+  "explorers-compass": {
+    "version": "26.2-2.5.1-fabric",
+    "file": "ExplorersCompass-26.2-2.5.1-fabric.jar",
+    "size": 176869,
+    "url": "https://cdn.modrinth.com/data/RV1qfVQ8/versions/z6auypou/ExplorersCompass-26.2-2.5.1-fabric.jar"
+  },
+  "travelersbackpack": {
+    "version": "26.2-11.3.3",
+    "file": "travelersbackpack-fabric-26.2-11.3.3.jar",
+    "size": 1515465,
+    "url": "https://cdn.modrinth.com/data/rlloIFEV/versions/I6Fg8UrJ/travelersbackpack-fabric-26.2-11.3.3.jar"
   }
 }
