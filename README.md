@@ -16,14 +16,15 @@ Prism Import zips — grab the latest from **Releases** (v4.0: 43 mods).
 
 ## Server vs client mods
 
-Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 30 mods) =
+Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 32 mods) =
 perf: fabric-api, lithium, ferrite-core, krypton, c2me-fabric, carpet;
 admin/world: luckperms, chunky, skill-proficiencies; food: farmers-delight +
 ubes/rustic/spanish/more delights, harvest-simplified, appleskin; worldgen:
 dungeons-and-taverns, towns-and-towers, explorify, repurposed-structures,
 explorations; gameplay: waystones, veinminer, fallingtree; decoration:
 adorn, macaws-furniture, blockus, modern-decorations-mod,
-additional-lanterns, macaws-lights.
+additional-lanterns, macaws-lights; maps: bluemap (:8100 3D web map),
+pl3xmap (:8080 2D web map) — configs persisted in ./bluemap, ./Pl3xMap.
 (modernfix skipped: no MC 26.2 build — latest supports 26.1.2.)
 
 Client-only (in the Prism zip, NOT on the server; 34 pinned entries):

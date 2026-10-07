@@ -6,8 +6,12 @@ services:
     restart: unless-stopped
     ports:
       - "25565:25565"
+      - "8100:8100"
+      - "8080:8080"
     volumes:
       - ./mc-data:/data
+      - ./bluemap:/data/config/bluemap
+      - ./Pl3xMap:/data/config/Pl3xMap
     env_file:
       - path: .env
         required: false
@@ -58,6 +62,8 @@ services:
         modern-decorations-mod
         additional-lanterns
         macaws-lights-and-lamps
+        bluemap
+        pl3xmap
   playit:
     image: ghcr.io/playit-cloud/playit-agent:latest
     restart: unless-stopped
