@@ -2,62 +2,74 @@
   "fabric-api": {
     "version": "0.161.0+26.2",
     "file": "fabric-api-0.161.0+26.2.jar",
-    "size": 2566123
+    "size": 2566123,
+    "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ewUK83HI/fabric-api-0.161.0%2B26.2.jar"
   },
   "skill-proficiencies": {
     "version": "1.6.3",
     "file": "specialities-1.6.3+26.2.jar",
-    "size": 152588
+    "size": 152588,
+    "url": "https://cdn.modrinth.com/data/d4TtjlpN/versions/NuXDJekA/specialities-1.6.3%2B26.2.jar"
   },
   "farmers-delight-refabricated": {
     "version": "26.2-3.6.26",
     "file": "FarmersDelight-26.2-3.6.26+refabricated.jar",
-    "size": 3476063
+    "size": 3476063,
+    "url": "https://cdn.modrinth.com/data/7vxePowz/versions/RvMf1qzl/FarmersDelight-26.2-3.6.26%2Brefabricated.jar"
   },
   "harvest-simplified": {
     "version": "1.1+mod",
     "file": "harvest-simplified-1.1.jar",
-    "size": 19090
+    "size": 19090,
+    "url": "https://cdn.modrinth.com/data/bty3Od8P/versions/MRlp3v7o/harvest-simplified-1.1.jar"
   },
   "more-delight": {
     "version": "26.06.23-26.2-fabric",
     "file": "moredelight-26.06.23-26.2-fabric.jar",
-    "size": 152584
+    "size": 152584,
+    "url": "https://cdn.modrinth.com/data/znHQQtuU/versions/RcXOnDXk/moredelight-26.06.23-26.2-fabric.jar"
   },
   "appleskin": {
     "version": "3.0.10+mc26.2",
     "file": "appleskin-fabric-mc26.2-3.0.10.jar",
-    "size": 181627
+    "size": 181627,
+    "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/uo5bAN1Y/appleskin-fabric-mc26.2-3.0.10.jar"
   },
   "ferrite-core": {
     "version": "9.0.0-fabric",
     "file": "ferritecore-9.0.0-fabric.jar",
-    "size": 72677
+    "size": 72677,
+    "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar"
   },
   "dungeons-and-taverns": {
     "version": "5.3.2+mod",
     "file": "dungeons-and-taverns-5.3.2.jar",
-    "size": 39642964
+    "size": 39642964,
+    "url": "https://cdn.modrinth.com/data/tpehi7ww/versions/y9AUViOD/dungeons-and-taverns-5.3.2.jar"
   },
   "towns-and-towers": {
     "version": "1.13.11",
     "file": "t_and_t-fabric-neoforge-1.13.11.jar",
-    "size": 3566810
+    "size": 3566810,
+    "url": "https://cdn.modrinth.com/data/DjLobEOy/versions/eN3WLQ3P/t_and_t-fabric-neoforge-1.13.11.jar"
   },
   "explorify": {
     "version": "v1.6.5",
     "file": "Explorify v1.6.5.mod.jar",
-    "size": 767884
+    "size": 767884,
+    "url": "https://cdn.modrinth.com/data/HSfsxuTo/versions/CuBdAr31/Explorify%20v1.6.5.mod.jar"
   },
   "repurposed-structures-fabric": {
     "version": "7.7.6+26.2-fabric",
     "file": "repurposed_structures-7.7.6+26.2-fabric.jar",
-    "size": 8327794
+    "size": 8327794,
+    "url": "https://cdn.modrinth.com/data/muf0XoRe/versions/CrmgMIJp/repurposed_structures-7.7.6%2B26.2-fabric.jar"
   },
   "explorations": {
     "version": "26.2-1.6.4-Fabric",
     "file": "explorations-fabric-26.2-1.6.4.jar",
-    "size": 220567
+    "size": 220567,
+    "url": "https://cdn.modrinth.com/data/pcGnjJ39/versions/pZDRvBKj/explorations-fabric-26.2-1.6.4.jar"
   },
   "waystones": {
     "version": "26.2.0.12+fabric-26.2",
