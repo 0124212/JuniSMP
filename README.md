@@ -10,7 +10,7 @@ Prism Import zips — grab the latest from **Releases** (48 pinned entries in
   survival/normal, 6G + Aikar flags, RCON on, playit.gg tunnel sidecar).
   Secrets via `.env` (see `mc-fabric/.env.example`) — never committed.
 - `prism/` — Prism Launcher metadata for the client pack: `instance.cfg`
-  (JuniSMP-v4, 4G), `mmc-pack.json` (MC + loader pins),
+  (JuniSMP, 4G), `mmc-pack.json` (MC + loader pins),
   `mod-versions.json` (pinned client mod list with hashes/sizes/URLs).
 - Full zips (`JuniSMP-v2/v3/v4.zip`, `JuniSMP-prism.zip`) live as release
   assets, not in git (see `.gitignore`).
