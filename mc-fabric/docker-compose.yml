@@ -7,11 +7,9 @@ services:
     ports:
       - "25565:25565"
       - "8100:8100"
-      - "8080:8080"
     volumes:
       - ./mc-data:/data
       - ./bluemap:/data/config/bluemap
-      - ./Pl3xMap:/data/config/Pl3xMap
     env_file:
       - path: .env
         required: false
@@ -42,10 +40,10 @@ services:
         ferrite-core
         skill-proficiencies
         krypton
-        c2me-fabric
+        c2me-fabric:0.4.2-alpha.0.56+26.2
         carpet
         spark
-        vmp-fabric
+        vmp-fabric:0.2.0+beta.7.236+26.2
         alternate-current
         noisiumforked
         ksyxis
@@ -67,7 +65,7 @@ services:
         explorations
         terralith
         tectonic
-        incendium
+        incendium:5.5.1
         nullscape
         structory
         ct-overhaul-village
@@ -83,7 +81,7 @@ services:
         universal-graves
         friends-and-foes
         double-doors
-        open-parties-and-claims
+        open-parties-and-claims:fabric-26.2-0.32.7
         styled-chat
         crafting-tweaks
         toms-storage
@@ -105,7 +103,24 @@ services:
         diagonal-fences
         skniros-furniture
         bluemap
-        pl3xmap
+        # --- transitive dependencies (verified 2026-10-09; the above entries
+        # don't declare these on Modrinth's own metadata, but Fabric's loader
+        # hard-requires them at boot) ---
+        polymer
+        lithostitched
+        forge-config-api-port
+        puzzles-lib
+        collective
+        resourceful-lib
+        moogs-structure-lib
+        supermartijn642s-core-lib
+        delight-lib
+        supermartijn642s-config-lib
+        fusion-connected-textures
+        cristel-lib
+        fabric-language-kotlin
+        balm
+        shogi
   playit:
     image: ghcr.io/playit-cloud/playit-agent:latest
     restart: unless-stopped

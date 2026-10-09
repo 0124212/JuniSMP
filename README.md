@@ -63,9 +63,27 @@ macaws-windows, macaws-roofs, rechiseled, diagonal-fences,
 skniros-furniture (picked over betterdeco — pick one; rechiseled +
 diagonal-fences + skniros-furniture also required client-side — in the
 Prism pack; macaws x4 + friends-and-foes + chefs-delight + crate-delight
-are client-required per Modrinth too — players must install them); maps: bluemap (:8100 3D web map),
-pl3xmap (:8080 2D web map) — configs persisted in ./bluemap, ./Pl3xMap.
+are client-required per Modrinth too — players must install them); maps: bluemap
+(:8100 3D web map), config persisted in ./bluemap. **pl3xmap dropped 2026-10-09**
+(junilab is only 2 vCPU — two full map renderers running simultaneously was
+pure redundant CPU contention with zero functional gain; bluemap kept as the
+more actively maintained of the two).
 (modernfix skipped: no MC 26.2 build — latest supports 26.1.2.)
+
+**Verified working end-to-end 2026-10-09** (prior to this, nobody had actually
+booted this compose file — several entries would have failed immediately):
+- `c2me-fabric`, `vmp-fabric`, `incendium`, `open-parties-and-claims` only
+  publish alpha/beta builds for 26.2; `MODRINTH_PROJECTS` defaults to
+  release-only, so each needs an explicit `slug:version` pin (already applied
+  above). The README already flagged incendium and open-parties-and-claims as
+  beta-only — the pins just weren't in the actual compose file.
+- 15 transitive dependencies are hard-required by Fabric's loader at boot but
+  aren't declared by Modrinth metadata for the mods above, so itzg's
+  auto-resolver never pulls them: `polymer`, `lithostitched`,
+  `forge-config-api-port`, `puzzles-lib`, `collective`, `resourceful-lib`,
+  `moogs-structure-lib`, `supermartijn642s-core-lib`, `delight-lib`,
+  `supermartijn642s-config-lib`, `fusion-connected-textures`, `cristel-lib`,
+  `fabric-language-kotlin`, `balm`, `shogi`. All added to `MODRINTH_PROJECTS`.
 
 Client-only (in the Prism zip, NOT on the server; 11 entries):
 sodium, sodium-extra, iris, reeses-sodium-options, rei, immediatelyfast,
