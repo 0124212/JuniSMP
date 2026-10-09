@@ -358,5 +358,47 @@
   "file": "shogi-fabric-26.2-26.2.0.8.jar",
   "size": 455591,
   "url": "https://cdn.modrinth.com/data/bi4iCmsw/versions/kjPMnetX/shogi-fabric-26.2-26.2.0.8.jar"
+ },
+ "chefs-delight": {
+  "version": "1.0.6-fabric-26.2",
+  "file": "chefsdelight-1.0.6-fabric-26.2.jar",
+  "size": 153354,
+  "url": "https://cdn.modrinth.com/data/pvcsfne4/versions/ArJ8wpA5/chefsdelight-1.0.6-fabric-26.2.jar"
+ },
+ "crate-delight": {
+  "version": "26.07.01-26.2-fabric",
+  "file": "cratedelight-26.07.01-26.2-fabric.jar",
+  "size": 199768,
+  "url": "https://cdn.modrinth.com/data/9rlXSyLg/versions/bh14ODmF/cratedelight-26.07.01-26.2-fabric.jar"
+ },
+ "friends-and-foes": {
+  "version": "fabric-5.0.2+mc26.2",
+  "file": "friendsandfoes-fabric-5.0.2+mc26.2.jar",
+  "size": 4391631,
+  "url": "https://cdn.modrinth.com/data/POQ2i9zu/versions/vvFUnEz7/friendsandfoes-fabric-5.0.2%2Bmc26.2.jar"
+ },
+ "macaws-bridges": {
+  "version": "3.1.2",
+  "file": "mcw-bridges-3.1.2-mc26.2fabric.jar",
+  "size": 719851,
+  "url": "https://cdn.modrinth.com/data/GURcjz8O/versions/O570Yvic/mcw-bridges-3.1.2-mc26.2fabric.jar"
+ },
+ "macaws-doors": {
+  "version": "1.1.5",
+  "file": "mcw-doors-1.1.5-mc26.2fabric.jar",
+  "size": 1451361,
+  "url": "https://cdn.modrinth.com/data/kNxa8z3e/versions/XxNfkmgt/mcw-doors-1.1.5-mc26.2fabric.jar"
+ },
+ "macaws-roofs": {
+  "version": "2.3.2",
+  "file": "mcw-roofs-2.3.3-mc26.2fabric.jar",
+  "size": 1925146,
+  "url": "https://cdn.modrinth.com/data/B8jaH3P1/versions/2NEmd2hl/mcw-roofs-2.3.3-mc26.2fabric.jar"
+ },
+ "macaws-windows": {
+  "version": "2.4.2",
+  "file": "mcw-windows-2.4.2-mc26.2fabric.jar",
+  "size": 1402302,
+  "url": "https://cdn.modrinth.com/data/C7I0BCni/versions/sNXCQQn1/mcw-windows-2.4.2-mc26.2fabric.jar"
  }
 }
