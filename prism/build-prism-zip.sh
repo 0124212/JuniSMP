@@ -35,7 +35,7 @@ case "$OUT" in /*) ;; *) OUT="$PWD/$OUT" ;; esac  # absolutize (we cd around bel
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
-mkdir "$STAGE/mods"
+mkdir -p "$STAGE/.minecraft/mods"
 
 # Stage exactly the manifest set: local jars where present, URL downloads for
 # the rest (staging only — the source dir is never modified).
@@ -45,7 +45,7 @@ stage, strict, src = os.environ['STAGE'], os.environ['STRICT'] == '1', os.enviro
 fails = []
 man = json.load(open('prism/mod-versions.json'))
 for slug, e in man.items():
-    dest = os.path.join(stage, 'mods', e['file'])
+    dest = os.path.join(stage, '.minecraft', 'mods', e['file'])
     local = os.path.join(src, e['file'])
     if os.path.exists(local):
         shutil.copy(local, dest)
@@ -65,7 +65,7 @@ EOF
 mkdir -p "$(dirname "$OUT")"
 rm -f "$OUT"
 cp prism/mmc-pack.json prism/instance.cfg "$STAGE/"
-(cd "$STAGE" && zip -q -r "$OUT" mmc-pack.json instance.cfg mods)
+(cd "$STAGE" && zip -q -r "$OUT" mmc-pack.json instance.cfg .minecraft)
 
 echo "--- $OUT ($(stat -c%s "$OUT") bytes) ---"
 unzip -l "$OUT" | head -8
