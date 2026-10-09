@@ -406,5 +406,47 @@
   "file": "ResourcefulLib-5.0.4.jar",
   "size": 455301,
   "url": "https://cdn.modrinth.com/data/G1hIVOrD/versions/4BbCbnE6/ResourcefulLib-5.0.4.jar"
+ },
+ "wizards": {
+  "version": "3.1.3.003+26.2-fabric",
+  "file": "wizards-fabric-3.1.3.003+26.2.jar",
+  "size": 4569857,
+  "url": "https://cdn.modrinth.com/data/NkGaQMDA/versions/P9kBKtsV/wizards-fabric-3.1.3.003%2B26.2.jar"
+ },
+ "spell-engine": {
+  "version": "1.10.9+26.2-fabric",
+  "file": "spell_engine-fabric-1.10.9+26.2.jar",
+  "size": 4758073,
+  "url": "https://cdn.modrinth.com/data/XvoWJaA2/versions/QBsRwj9A/spell_engine-fabric-1.10.9%2B26.2.jar"
+ },
+ "spell-power": {
+  "version": "1.6.2+26.2-fabric",
+  "file": "spell_power-fabric-1.6.2+26.2.jar",
+  "size": 226491,
+  "url": "https://cdn.modrinth.com/data/8ooWzSQP/versions/hZSvBdgk/spell_power-fabric-1.6.2%2B26.2.jar"
+ },
+ "runes": {
+  "version": "1.3.2+26.2-fabric",
+  "file": "runes-fabric-1.3.2+26.2.jar",
+  "size": 385813,
+  "url": "https://cdn.modrinth.com/data/lP9Yrr1E/versions/rrNHR0aU/runes-fabric-1.3.2%2B26.2.jar"
+ },
+ "player-animation-library": {
+  "version": "1.2.8",
+  "file": "PlayerAnimationLibMerged-1.2.8+mc.26.2.jar",
+  "size": 420246,
+  "url": "https://cdn.modrinth.com/data/ha1mEyJS/versions/ZMIJpO9T/PlayerAnimationLibMerged-1.2.8%2Bmc.26.2.jar"
+ },
+ "armor-model-api": {
+  "version": "1.1.2+26.2-fabric",
+  "file": "armor_model_api-fabric-1.1.2+26.2.jar",
+  "size": 100413,
+  "url": "https://cdn.modrinth.com/data/onz2NN2n/versions/v25Jo0f4/armor_model_api-fabric-1.1.2%2B26.2.jar"
+ },
+ "structure-pool-api": {
+  "version": "1.3.0+26.2-fabric",
+  "file": "structure_pool_api-fabric-1.3.0+26.2.jar",
+  "size": 127265,
+  "url": "https://cdn.modrinth.com/data/LrYZi08Q/versions/JO33Bce1/structure_pool_api-fabric-1.3.0%2B26.2.jar"
  }
 }

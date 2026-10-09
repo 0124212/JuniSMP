@@ -121,6 +121,14 @@ services:
         fabric-language-kotlin
         balm
         shogi
+        # --- magic/RPG seat, added 2026-10-09 ---
+        wizards
+        spell-engine
+        spell-power
+        runes
+        player-animation-library
+        armor-model-api
+        structure-pool-api
   playit:
     image: ghcr.io/playit-cloud/playit-agent:latest
     restart: unless-stopped
