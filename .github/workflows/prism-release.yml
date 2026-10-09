@@ -1,0 +1,42 @@
+# Rebuilds JuniSMP-prism.zip from the manifest and attaches it to the
+# rolling `prism-latest` release. Trigger: any push to prism/** on main.
+# The zip is never committed to git (*.zip is gitignored) — release asset only.
+name: prism-release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'prism/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild zip from manifest (strict)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq zip unzip
+          chmod +x prism/build-prism-zip.sh
+          mkdir -p mods
+          prism/build-prism-zip.sh --strict --out dist/JuniSMP-prism.zip
+
+      - name: Upload artifact (always kept for debugging)
+        uses: actions/upload-artifact@v4
+        with:
+          name: JuniSMP-prism
+          path: dist/JuniSMP-prism.zip
+
+      - name: Attach to rolling prism-latest release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view prism-latest >/dev/null 2>&1 \
+            || gh release create prism-latest --title "JuniSMP Prism (latest)" \
+                 --notes "Rolling Prism Launcher import, rebuilt from prism/mod-versions.json on every push."
+          gh release upload prism-latest dist/JuniSMP-prism.zip --clobber

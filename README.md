@@ -15,6 +15,20 @@ Prism Import zips — grab the latest from **Releases** (48 pinned entries in
 - Full zips (`JuniSMP-v2/v3/v4.zip`, `JuniSMP-prism.zip`) live as release
   assets, not in git (see `.gitignore`).
 
+## Rebuilding the Prism zip
+
+`prism/mod-versions.json` is the single truth for the client pack. To rebuild:
+
+```sh
+prism/build-prism-zip.sh --mods-dir ./mods --out dist/JuniSMP-prism.zip
+```
+
+Missing jars with a manifest `url` are downloaded automatically; entries
+without one must already sit in the mods dir (`--strict` turns gaps into a
+failure — this is what CI uses). Every push to `prism/**` on main runs
+`.github/workflows/prism-release.yml`, which rebuilds `--strict` and attaches
+the zip to the rolling `prism-latest` release (`gh release`, no extra secrets).
+
 ## Server vs client mods
 
 Server (`MODRINTH_PROJECTS` in compose, auto-downloaded on boot; 71 mods) =
