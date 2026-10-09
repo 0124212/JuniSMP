@@ -1,290 +1,320 @@
 {
-  "fabric-api": {
-    "version": "0.161.0+26.2",
-    "file": "fabric-api-0.161.0+26.2.jar",
-    "size": 2566123,
-    "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ewUK83HI/fabric-api-0.161.0%2B26.2.jar"
-  },
-  "skill-proficiencies": {
-    "version": "1.6.3",
-    "file": "specialities-1.6.3+26.2.jar",
-    "size": 152588,
-    "url": "https://cdn.modrinth.com/data/d4TtjlpN/versions/NuXDJekA/specialities-1.6.3%2B26.2.jar"
-  },
-  "farmers-delight-refabricated": {
-    "version": "26.2-3.6.26",
-    "file": "FarmersDelight-26.2-3.6.26+refabricated.jar",
-    "size": 3476063,
-    "url": "https://cdn.modrinth.com/data/7vxePowz/versions/RvMf1qzl/FarmersDelight-26.2-3.6.26%2Brefabricated.jar"
-  },
-  "harvest-simplified": {
-    "version": "1.1+mod",
-    "file": "harvest-simplified-1.1.jar",
-    "size": 19090,
-    "url": "https://cdn.modrinth.com/data/bty3Od8P/versions/MRlp3v7o/harvest-simplified-1.1.jar"
-  },
-  "more-delight": {
-    "version": "26.06.23-26.2-fabric",
-    "file": "moredelight-26.06.23-26.2-fabric.jar",
-    "size": 152584,
-    "url": "https://cdn.modrinth.com/data/znHQQtuU/versions/RcXOnDXk/moredelight-26.06.23-26.2-fabric.jar"
-  },
-  "appleskin": {
-    "version": "3.0.10+mc26.2",
-    "file": "appleskin-fabric-mc26.2-3.0.10.jar",
-    "size": 181627,
-    "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/uo5bAN1Y/appleskin-fabric-mc26.2-3.0.10.jar"
-  },
-  "ferrite-core": {
-    "version": "9.0.0-fabric",
-    "file": "ferritecore-9.0.0-fabric.jar",
-    "size": 72677,
-    "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar"
-  },
-  "dungeons-and-taverns": {
-    "version": "5.3.2+mod",
-    "file": "dungeons-and-taverns-5.3.2.jar",
-    "size": 39642964,
-    "url": "https://cdn.modrinth.com/data/tpehi7ww/versions/y9AUViOD/dungeons-and-taverns-5.3.2.jar"
-  },
-  "towns-and-towers": {
-    "version": "1.13.11",
-    "file": "t_and_t-fabric-neoforge-1.13.11.jar",
-    "size": 3566810,
-    "url": "https://cdn.modrinth.com/data/DjLobEOy/versions/eN3WLQ3P/t_and_t-fabric-neoforge-1.13.11.jar"
-  },
-  "explorify": {
-    "version": "v1.6.5",
-    "file": "Explorify v1.6.5.mod.jar",
-    "size": 767884,
-    "url": "https://cdn.modrinth.com/data/HSfsxuTo/versions/CuBdAr31/Explorify%20v1.6.5.mod.jar"
-  },
-  "repurposed-structures-fabric": {
-    "version": "7.7.6+26.2-fabric",
-    "file": "repurposed_structures-7.7.6+26.2-fabric.jar",
-    "size": 8327794,
-    "url": "https://cdn.modrinth.com/data/muf0XoRe/versions/CrmgMIJp/repurposed_structures-7.7.6%2B26.2-fabric.jar"
-  },
-  "explorations": {
-    "version": "26.2-1.6.4-Fabric",
-    "file": "explorations-fabric-26.2-1.6.4.jar",
-    "size": 220567,
-    "url": "https://cdn.modrinth.com/data/pcGnjJ39/versions/pZDRvBKj/explorations-fabric-26.2-1.6.4.jar"
-  },
-  "waystones": {
-    "version": "26.2.0.12+fabric-26.2",
-    "file": "waystones-fabric-26.2-26.2.0.12.jar",
-    "size": 1220789,
-    "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/HUacBshD/waystones-fabric-26.2-26.2.0.12.jar"
-  },
-  "veinminer": {
-    "version": "2.12.1",
-    "file": "veinminer-fabric-2.12.1.jar",
-    "size": 523832,
-    "url": "https://cdn.modrinth.com/data/OhduvhIc/versions/InpIvPQ1/veinminer-fabric-2.12.1.jar"
-  },
-  "fallingtree": {
-    "version": "26.2-26.2.0.3",
-    "file": "FallingTree-26.2-25.jar",
-    "size": 493214,
-    "url": "https://cdn.modrinth.com/data/Fb4jn8m6/versions/sOoH5kkd/FallingTree-26.2-25.jar"
-  },
-  "sodium": {
-    "version": "mc26.2-0.9.2-fabric",
-    "file": "sodium-fabric-0.9.2+mc26.2.jar",
-    "size": 1885572,
-    "url": "https://cdn.modrinth.com/data/AANobbMI/versions/xJZxADzI/sodium-fabric-0.9.2%2Bmc26.2.jar"
-  },
-  "reeses-sodium-options": {
-    "version": "mc26.2-2.2.4+fabric",
-    "file": "reeses-sodium-options-fabric-2.2.4+mc26.2.jar",
-    "size": 257483,
-    "url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/nnz8j4Hu/reeses-sodium-options-fabric-2.2.4%2Bmc26.2.jar"
-  },
-  "sodium-extra": {
-    "version": "mc26.2-0.9.4+fabric",
-    "file": "sodium-extra-fabric-0.9.4+mc26.2.jar",
-    "size": 484469,
-    "url": "https://cdn.modrinth.com/data/PtjYWJkn/versions/kGXOsmfx/sodium-extra-fabric-0.9.4%2Bmc26.2.jar"
-  },
-  "iris": {
-    "version": "1.11.4+26.2-fabric",
-    "file": "iris-fabric-1.11.4+mc26.2.jar",
-    "size": 2821616,
-    "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/gxZWWnKH/iris-fabric-1.11.4%2Bmc26.2.jar"
-  },
-  "ubes-delight": {
-    "version": "26.2-0.4.14",
-    "file": "ubesdelight-fabric-26.2-0.4.14.jar",
-    "size": 989041,
-    "url": "https://cdn.modrinth.com/data/PYjpoAys/versions/Roe7K8pA/ubesdelight-fabric-26.2-0.4.14.jar"
-  },
-  "rustic-delight": {
-    "version": "1.7.0",
-    "file": "rusticdelight-fabric-26.2-1.7.0.jar",
-    "size": 1053173,
-    "url": "https://cdn.modrinth.com/data/foa4fGIH/versions/Ioo3Id1t/rusticdelight-fabric-26.2-1.7.0.jar"
-  },
-  "spanish-delight-refabricated": {
-    "version": "26.2-1.0.11",
-    "file": "spanishdelight-26.2-1.0.11.jar",
-    "size": 123397,
-    "url": "https://cdn.modrinth.com/data/E2LV3K2B/versions/Eo49hUEj/spanishdelight-26.2-1.0.11.jar"
-  },
-  "rei": {
-    "version": "26.2.820+fabric",
-    "file": "RoughlyEnoughItems-26.2.820.jar",
-    "size": 2419949,
-    "url": "https://cdn.modrinth.com/data/nfn13YXA/versions/4o0NSIMj/RoughlyEnoughItems-26.2.820.jar"
-  },
-  "inventory-sorting": {
-    "version": "3.0.1+fabric-26.2",
-    "file": "inventorysorter-fabric-3.0.1+mc26.2.jar",
-    "size": 3798183,
-    "url": "https://cdn.modrinth.com/data/5ibSyLAz/versions/D6W3Lrmj/inventorysorter-fabric-3.0.1%2Bmc26.2.jar"
-  },
-  "inventory-profiles-next": {
-    "version": "fabric-26.2-2.3.7",
-    "file": "InventoryProfilesNext-fabric-26.2-2.3.7.jar",
-    "size": 1456192,
-    "url": "https://cdn.modrinth.com/data/O7RBXm3n/versions/SnUA305X/InventoryProfilesNext-fabric-26.2-2.3.7.jar"
-  },
-  "inventory-management": {
-    "version": "2.0.2+26.2-fabric",
-    "file": "inventorymanagement-fabric-2.0.2+26.2.jar",
-    "size": 937105,
-    "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/PxZPDukH/inventorymanagement-fabric-2.0.2%2B26.2.jar"
-  },
-  "immediatelyfast": {
-    "version": "1.16.5+26.2-fabric",
-    "file": "ImmediatelyFast-Fabric-1.16.5+26.2.jar",
-    "size": 100500,
-    "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/pMWERcSu/ImmediatelyFast-Fabric-1.16.5%2B26.2.jar"
-  },
-  "entityculling": {
-    "version": "1.11.2",
-    "file": "entityculling-fabric-1.11.2-mc26.2.jar",
-    "size": 1508311,
-    "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/RWjup6Jf/entityculling-fabric-1.11.2-mc26.2.jar"
-  },
-  "adorn": {
-    "version": "9.0.0-fabric",
-    "file": "Adorn-9.0.0+26.2-fabric.jar",
-    "size": 2801888,
-    "url": "https://cdn.modrinth.com/data/E6FUtRJh/versions/OmRBvMca/Adorn-9.0.0%2B26.2-fabric.jar"
-  },
-  "macaws-furniture": {
-    "version": "3.4.1",
-    "file": "mcw-furniture-3.4.2-mc26.2fabric.jar",
-    "size": 2386965,
-    "url": "https://cdn.modrinth.com/data/dtWC90iB/versions/ptL25rVF/mcw-furniture-3.4.2-mc26.2fabric.jar"
-  },
-  "blockus": {
-    "version": "2.17.3+26.2",
-    "file": "blockus-2.17.3+26.2.jar",
-    "size": 7311775,
-    "url": "https://cdn.modrinth.com/data/zFiY2Go0/versions/wKScvq1F/blockus-2.17.3%2B26.2.jar"
-  },
-  "modern-decorations-mod": {
-    "version": "26.9",
-    "file": "mdm-26.9-fabric-26.2.jar",
-    "size": 2750491,
-    "url": "https://cdn.modrinth.com/data/TmUXSYKk/versions/VEbkE6pg/mdm-26.9-fabric-26.2.jar"
-  },
-  "additional-lanterns": {
-    "version": "1.1.2-fabric-mc26.2",
-    "file": "additionallanterns-1.1.2-fabric-mc26.2.jar",
-    "size": 3806731,
-    "url": "https://cdn.modrinth.com/data/jXNvTKds/versions/LlSWK1oA/additionallanterns-1.1.2-fabric-mc26.2.jar"
-  },
-  "macaws-lights-and-lamps": {
-    "version": "1.1.5",
-    "file": "mcw-lights-1.1.5-mc26.2fabric.jar",
-    "size": 545998,
-    "url": "https://cdn.modrinth.com/data/w4an97C2/versions/pgtedKkN/mcw-lights-1.1.5-mc26.2fabric.jar"
-  },
-  "natures-compass": {
-    "version": "26.2-2.5.1-fabric",
-    "file": "NaturesCompass-26.2-2.5.1-fabric.jar",
-    "size": 232686,
-    "url": "https://cdn.modrinth.com/data/fPetb5Kh/versions/1X6iEfOy/NaturesCompass-26.2-2.5.1-fabric.jar"
-  },
-  "explorers-compass": {
-    "version": "26.2-2.5.1-fabric",
-    "file": "ExplorersCompass-26.2-2.5.1-fabric.jar",
-    "size": 176869,
-    "url": "https://cdn.modrinth.com/data/RV1qfVQ8/versions/z6auypou/ExplorersCompass-26.2-2.5.1-fabric.jar"
-  },
-  "travelersbackpack": {
-    "version": "26.2-11.3.3",
-    "file": "travelersbackpack-fabric-26.2-11.3.3.jar",
-    "size": 1515465,
-    "url": "https://cdn.modrinth.com/data/rlloIFEV/versions/I6Fg8UrJ/travelersbackpack-fabric-26.2-11.3.3.jar"
-  },
-  "xaeros-minimap": {
-    "version": "fabric-26.2-26.6.0",
-    "file": "xaerominimap-fabric-26.2-26.6.0.jar",
-    "size": 2222684,
-    "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/JRopWECg/xaerominimap-fabric-26.2-26.6.0.jar"
-  },
-  "xaeros-world-map": {
-    "version": "fabric-26.2-1.47.0",
-    "file": "xaeroworldmap-fabric-26.2-1.47.0.jar",
-    "size": 1482162,
-    "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/ebWaQDqf/xaeroworldmap-fabric-26.2-1.47.0.jar"
-  },
-  "shulkerboxtooltip": {
-    "version": "5.4.1+26.2-fabric",
-    "file": "shulkerboxtooltip-fabric-5.4.1+26.2.jar",
-    "size": 422638,
-    "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/fbcCAoFL/shulkerboxtooltip-fabric-5.4.1%2B26.2.jar"
-  },
-  "chat-heads": {
-    "version": "1.3.2",
-    "file": "chat_heads-1.3.2-fabric-26.1.jar",
-    "size": 98554,
-    "url": "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/rsO6BV1x/chat_heads-1.3.2-fabric-26.1.jar"
-  },
-  "moreculling": {
-    "version": "1.8.1",
-    "file": "moreculling-fabric-26.2-1.8.1.jar",
-    "size": 363646,
-    "url": "https://cdn.modrinth.com/data/51shyZVL/versions/D5oVCouK/moreculling-fabric-26.2-1.8.1.jar"
-  },
-  "rechiseled": {
-    "version": "1.2.6-fabric-mc26.2",
-    "file": "rechiseled-1.2.6-fabric-mc26.2.jar",
-    "size": 12292299,
-    "url": "https://cdn.modrinth.com/data/B0g2vT6l/versions/u535HhZe/rechiseled-1.2.6-fabric-mc26.2.jar"
-  },
-  "diagonal-fences": {
-    "version": "26.2.0",
-    "file": "DiagonalFences-v26.2.0-mc26.2.x-Fabric.jar",
-    "size": 126765,
-    "url": "https://cdn.modrinth.com/data/IKARgflD/versions/XxnvsgPA/DiagonalFences-v26.2.0-mc26.2.x-Fabric.jar"
-  },
-  "skniros-furniture": {
-    "version": "1.6.0-26.2-Fabric",
-    "file": "SkniroFurniture-1.6.0-26.2-Fabric.jar",
-    "size": 9746803,
-    "url": "https://cdn.modrinth.com/data/pezpt98N/versions/n6uG34xf/SkniroFurniture-1.6.0-26.2-Fabric.jar"
-  },
-  "toms-storage": {
-    "version": "26.2-2.11.3-fabric",
-    "file": "toms_storage_fabric-26.2-2.11.3.jar",
-    "size": 1882033,
-    "url": "https://cdn.modrinth.com/data/XZNI4Cpy/versions/V1KIQDWS/toms_storage_fabric-26.2-2.11.3.jar"
-  },
-  "storagedrawers": {
-    "version": "26.2.0.1+fabric",
-    "file": "StorageDrawers-fabric-26.2.0.1.jar",
-    "size": 1229145,
-    "url": "https://cdn.modrinth.com/data/guitPqEi/versions/cJA3JdCZ/StorageDrawers-fabric-26.2.0.1.jar"
-  },
-  "mouse-tweaks": {
-    "version": "26.2-2.31-fabric",
-    "file": "MouseTweaks-fabric-mc26.2-2.31.jar",
-    "size": 75872,
-    "url": "https://cdn.modrinth.com/data/aC3cM3Vq/versions/jOiTBIaB/MouseTweaks-fabric-mc26.2-2.31.jar"
-  }
+ "fabric-api": {
+  "version": "0.161.0+26.2",
+  "file": "fabric-api-0.161.0+26.2.jar",
+  "size": 2566123,
+  "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ewUK83HI/fabric-api-0.161.0%2B26.2.jar"
+ },
+ "skill-proficiencies": {
+  "version": "1.6.3",
+  "file": "specialities-1.6.3+26.2.jar",
+  "size": 152588,
+  "url": "https://cdn.modrinth.com/data/d4TtjlpN/versions/NuXDJekA/specialities-1.6.3%2B26.2.jar"
+ },
+ "farmers-delight-refabricated": {
+  "version": "26.2-3.6.26",
+  "file": "FarmersDelight-26.2-3.6.26+refabricated.jar",
+  "size": 3476063,
+  "url": "https://cdn.modrinth.com/data/7vxePowz/versions/RvMf1qzl/FarmersDelight-26.2-3.6.26%2Brefabricated.jar"
+ },
+ "harvest-simplified": {
+  "version": "1.1+mod",
+  "file": "harvest-simplified-1.1.jar",
+  "size": 19090,
+  "url": "https://cdn.modrinth.com/data/bty3Od8P/versions/MRlp3v7o/harvest-simplified-1.1.jar"
+ },
+ "more-delight": {
+  "version": "26.06.23-26.2-fabric",
+  "file": "moredelight-26.06.23-26.2-fabric.jar",
+  "size": 152584,
+  "url": "https://cdn.modrinth.com/data/znHQQtuU/versions/RcXOnDXk/moredelight-26.06.23-26.2-fabric.jar"
+ },
+ "appleskin": {
+  "version": "3.0.10+mc26.2",
+  "file": "appleskin-fabric-mc26.2-3.0.10.jar",
+  "size": 181627,
+  "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/uo5bAN1Y/appleskin-fabric-mc26.2-3.0.10.jar"
+ },
+ "ferrite-core": {
+  "version": "9.0.0-fabric",
+  "file": "ferritecore-9.0.0-fabric.jar",
+  "size": 72677,
+  "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar"
+ },
+ "dungeons-and-taverns": {
+  "version": "5.3.2+mod",
+  "file": "dungeons-and-taverns-5.3.2.jar",
+  "size": 39642964,
+  "url": "https://cdn.modrinth.com/data/tpehi7ww/versions/y9AUViOD/dungeons-and-taverns-5.3.2.jar"
+ },
+ "towns-and-towers": {
+  "version": "1.13.11",
+  "file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "size": 3566810,
+  "url": "https://cdn.modrinth.com/data/DjLobEOy/versions/eN3WLQ3P/t_and_t-fabric-neoforge-1.13.11.jar"
+ },
+ "explorify": {
+  "version": "v1.6.5",
+  "file": "Explorify v1.6.5.mod.jar",
+  "size": 767884,
+  "url": "https://cdn.modrinth.com/data/HSfsxuTo/versions/CuBdAr31/Explorify%20v1.6.5.mod.jar"
+ },
+ "repurposed-structures-fabric": {
+  "version": "7.7.6+26.2-fabric",
+  "file": "repurposed_structures-7.7.6+26.2-fabric.jar",
+  "size": 8327794,
+  "url": "https://cdn.modrinth.com/data/muf0XoRe/versions/CrmgMIJp/repurposed_structures-7.7.6%2B26.2-fabric.jar"
+ },
+ "explorations": {
+  "version": "26.2-1.6.4-Fabric",
+  "file": "explorations-fabric-26.2-1.6.4.jar",
+  "size": 220567,
+  "url": "https://cdn.modrinth.com/data/pcGnjJ39/versions/pZDRvBKj/explorations-fabric-26.2-1.6.4.jar"
+ },
+ "waystones": {
+  "version": "26.2.0.12+fabric-26.2",
+  "file": "waystones-fabric-26.2-26.2.0.12.jar",
+  "size": 1220789,
+  "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/HUacBshD/waystones-fabric-26.2-26.2.0.12.jar"
+ },
+ "veinminer": {
+  "version": "2.12.1",
+  "file": "veinminer-fabric-2.12.1.jar",
+  "size": 523832,
+  "url": "https://cdn.modrinth.com/data/OhduvhIc/versions/InpIvPQ1/veinminer-fabric-2.12.1.jar"
+ },
+ "fallingtree": {
+  "version": "26.2-26.2.0.3",
+  "file": "FallingTree-26.2-25.jar",
+  "size": 493214,
+  "url": "https://cdn.modrinth.com/data/Fb4jn8m6/versions/sOoH5kkd/FallingTree-26.2-25.jar"
+ },
+ "sodium": {
+  "version": "mc26.2-0.9.2-fabric",
+  "file": "sodium-fabric-0.9.2+mc26.2.jar",
+  "size": 1885572,
+  "url": "https://cdn.modrinth.com/data/AANobbMI/versions/xJZxADzI/sodium-fabric-0.9.2%2Bmc26.2.jar"
+ },
+ "reeses-sodium-options": {
+  "version": "mc26.2-2.2.4+fabric",
+  "file": "reeses-sodium-options-fabric-2.2.4+mc26.2.jar",
+  "size": 257483,
+  "url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/nnz8j4Hu/reeses-sodium-options-fabric-2.2.4%2Bmc26.2.jar"
+ },
+ "sodium-extra": {
+  "version": "mc26.2-0.9.4+fabric",
+  "file": "sodium-extra-fabric-0.9.4+mc26.2.jar",
+  "size": 484469,
+  "url": "https://cdn.modrinth.com/data/PtjYWJkn/versions/kGXOsmfx/sodium-extra-fabric-0.9.4%2Bmc26.2.jar"
+ },
+ "iris": {
+  "version": "1.11.4+26.2-fabric",
+  "file": "iris-fabric-1.11.4+mc26.2.jar",
+  "size": 2821616,
+  "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/gxZWWnKH/iris-fabric-1.11.4%2Bmc26.2.jar"
+ },
+ "ubes-delight": {
+  "version": "26.2-0.4.14",
+  "file": "ubesdelight-fabric-26.2-0.4.14.jar",
+  "size": 989041,
+  "url": "https://cdn.modrinth.com/data/PYjpoAys/versions/Roe7K8pA/ubesdelight-fabric-26.2-0.4.14.jar"
+ },
+ "rustic-delight": {
+  "version": "1.7.0",
+  "file": "rusticdelight-fabric-26.2-1.7.0.jar",
+  "size": 1053173,
+  "url": "https://cdn.modrinth.com/data/foa4fGIH/versions/Ioo3Id1t/rusticdelight-fabric-26.2-1.7.0.jar"
+ },
+ "spanish-delight-refabricated": {
+  "version": "26.2-1.0.11",
+  "file": "spanishdelight-26.2-1.0.11.jar",
+  "size": 123397,
+  "url": "https://cdn.modrinth.com/data/E2LV3K2B/versions/Eo49hUEj/spanishdelight-26.2-1.0.11.jar"
+ },
+ "rei": {
+  "version": "26.2.820+fabric",
+  "file": "RoughlyEnoughItems-26.2.820.jar",
+  "size": 2419949,
+  "url": "https://cdn.modrinth.com/data/nfn13YXA/versions/4o0NSIMj/RoughlyEnoughItems-26.2.820.jar"
+ },
+ "inventory-sorting": {
+  "version": "3.0.1+fabric-26.2",
+  "file": "inventorysorter-fabric-3.0.1+mc26.2.jar",
+  "size": 3798183,
+  "url": "https://cdn.modrinth.com/data/5ibSyLAz/versions/D6W3Lrmj/inventorysorter-fabric-3.0.1%2Bmc26.2.jar"
+ },
+ "inventory-profiles-next": {
+  "version": "fabric-26.2-2.3.7",
+  "file": "InventoryProfilesNext-fabric-26.2-2.3.7.jar",
+  "size": 1456192,
+  "url": "https://cdn.modrinth.com/data/O7RBXm3n/versions/SnUA305X/InventoryProfilesNext-fabric-26.2-2.3.7.jar"
+ },
+ "inventory-management": {
+  "version": "2.0.2+26.2-fabric",
+  "file": "inventorymanagement-fabric-2.0.2+26.2.jar",
+  "size": 937105,
+  "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/PxZPDukH/inventorymanagement-fabric-2.0.2%2B26.2.jar"
+ },
+ "immediatelyfast": {
+  "version": "1.16.5+26.2-fabric",
+  "file": "ImmediatelyFast-Fabric-1.16.5+26.2.jar",
+  "size": 100500,
+  "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/pMWERcSu/ImmediatelyFast-Fabric-1.16.5%2B26.2.jar"
+ },
+ "entityculling": {
+  "version": "1.11.2",
+  "file": "entityculling-fabric-1.11.2-mc26.2.jar",
+  "size": 1508311,
+  "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/RWjup6Jf/entityculling-fabric-1.11.2-mc26.2.jar"
+ },
+ "adorn": {
+  "version": "9.0.0-fabric",
+  "file": "Adorn-9.0.0+26.2-fabric.jar",
+  "size": 2801888,
+  "url": "https://cdn.modrinth.com/data/E6FUtRJh/versions/OmRBvMca/Adorn-9.0.0%2B26.2-fabric.jar"
+ },
+ "macaws-furniture": {
+  "version": "3.4.1",
+  "file": "mcw-furniture-3.4.2-mc26.2fabric.jar",
+  "size": 2386965,
+  "url": "https://cdn.modrinth.com/data/dtWC90iB/versions/ptL25rVF/mcw-furniture-3.4.2-mc26.2fabric.jar"
+ },
+ "blockus": {
+  "version": "2.17.3+26.2",
+  "file": "blockus-2.17.3+26.2.jar",
+  "size": 7311775,
+  "url": "https://cdn.modrinth.com/data/zFiY2Go0/versions/wKScvq1F/blockus-2.17.3%2B26.2.jar"
+ },
+ "modern-decorations-mod": {
+  "version": "26.9",
+  "file": "mdm-26.9-fabric-26.2.jar",
+  "size": 2750491,
+  "url": "https://cdn.modrinth.com/data/TmUXSYKk/versions/VEbkE6pg/mdm-26.9-fabric-26.2.jar"
+ },
+ "additional-lanterns": {
+  "version": "1.1.2-fabric-mc26.2",
+  "file": "additionallanterns-1.1.2-fabric-mc26.2.jar",
+  "size": 3806731,
+  "url": "https://cdn.modrinth.com/data/jXNvTKds/versions/LlSWK1oA/additionallanterns-1.1.2-fabric-mc26.2.jar"
+ },
+ "macaws-lights-and-lamps": {
+  "version": "1.1.5",
+  "file": "mcw-lights-1.1.5-mc26.2fabric.jar",
+  "size": 545998,
+  "url": "https://cdn.modrinth.com/data/w4an97C2/versions/pgtedKkN/mcw-lights-1.1.5-mc26.2fabric.jar"
+ },
+ "natures-compass": {
+  "version": "26.2-2.5.1-fabric",
+  "file": "NaturesCompass-26.2-2.5.1-fabric.jar",
+  "size": 232686,
+  "url": "https://cdn.modrinth.com/data/fPetb5Kh/versions/1X6iEfOy/NaturesCompass-26.2-2.5.1-fabric.jar"
+ },
+ "explorers-compass": {
+  "version": "26.2-2.5.1-fabric",
+  "file": "ExplorersCompass-26.2-2.5.1-fabric.jar",
+  "size": 176869,
+  "url": "https://cdn.modrinth.com/data/RV1qfVQ8/versions/z6auypou/ExplorersCompass-26.2-2.5.1-fabric.jar"
+ },
+ "travelersbackpack": {
+  "version": "26.2-11.3.3",
+  "file": "travelersbackpack-fabric-26.2-11.3.3.jar",
+  "size": 1515465,
+  "url": "https://cdn.modrinth.com/data/rlloIFEV/versions/I6Fg8UrJ/travelersbackpack-fabric-26.2-11.3.3.jar"
+ },
+ "xaeros-minimap": {
+  "version": "fabric-26.2-26.6.0",
+  "file": "xaerominimap-fabric-26.2-26.6.0.jar",
+  "size": 2222684,
+  "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/JRopWECg/xaerominimap-fabric-26.2-26.6.0.jar"
+ },
+ "xaeros-world-map": {
+  "version": "fabric-26.2-1.47.0",
+  "file": "xaeroworldmap-fabric-26.2-1.47.0.jar",
+  "size": 1482162,
+  "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/ebWaQDqf/xaeroworldmap-fabric-26.2-1.47.0.jar"
+ },
+ "shulkerboxtooltip": {
+  "version": "5.4.1+26.2-fabric",
+  "file": "shulkerboxtooltip-fabric-5.4.1+26.2.jar",
+  "size": 422638,
+  "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/fbcCAoFL/shulkerboxtooltip-fabric-5.4.1%2B26.2.jar"
+ },
+ "chat-heads": {
+  "version": "1.3.2",
+  "file": "chat_heads-1.3.2-fabric-26.1.jar",
+  "size": 98554,
+  "url": "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/rsO6BV1x/chat_heads-1.3.2-fabric-26.1.jar"
+ },
+ "moreculling": {
+  "version": "1.8.1",
+  "file": "moreculling-fabric-26.2-1.8.1.jar",
+  "size": 363646,
+  "url": "https://cdn.modrinth.com/data/51shyZVL/versions/D5oVCouK/moreculling-fabric-26.2-1.8.1.jar"
+ },
+ "rechiseled": {
+  "version": "1.2.6-fabric-mc26.2",
+  "file": "rechiseled-1.2.6-fabric-mc26.2.jar",
+  "size": 12292299,
+  "url": "https://cdn.modrinth.com/data/B0g2vT6l/versions/u535HhZe/rechiseled-1.2.6-fabric-mc26.2.jar"
+ },
+ "diagonal-fences": {
+  "version": "26.2.0",
+  "file": "DiagonalFences-v26.2.0-mc26.2.x-Fabric.jar",
+  "size": 126765,
+  "url": "https://cdn.modrinth.com/data/IKARgflD/versions/XxnvsgPA/DiagonalFences-v26.2.0-mc26.2.x-Fabric.jar"
+ },
+ "skniros-furniture": {
+  "version": "1.6.0-26.2-Fabric",
+  "file": "SkniroFurniture-1.6.0-26.2-Fabric.jar",
+  "size": 9746803,
+  "url": "https://cdn.modrinth.com/data/pezpt98N/versions/n6uG34xf/SkniroFurniture-1.6.0-26.2-Fabric.jar"
+ },
+ "toms-storage": {
+  "version": "26.2-2.11.3-fabric",
+  "file": "toms_storage_fabric-26.2-2.11.3.jar",
+  "size": 1882033,
+  "url": "https://cdn.modrinth.com/data/XZNI4Cpy/versions/V1KIQDWS/toms_storage_fabric-26.2-2.11.3.jar"
+ },
+ "storagedrawers": {
+  "version": "26.2.0.1+fabric",
+  "file": "StorageDrawers-fabric-26.2.0.1.jar",
+  "size": 1229145,
+  "url": "https://cdn.modrinth.com/data/guitPqEi/versions/cJA3JdCZ/StorageDrawers-fabric-26.2.0.1.jar"
+ },
+ "mouse-tweaks": {
+  "version": "26.2-2.31-fabric",
+  "file": "MouseTweaks-fabric-mc26.2-2.31.jar",
+  "size": 75872,
+  "url": "https://cdn.modrinth.com/data/aC3cM3Vq/versions/jOiTBIaB/MouseTweaks-fabric-mc26.2-2.31.jar"
+ },
+ "supermartijn642s-core-lib": {
+  "version": "1.1.25-fabric-mc26.2",
+  "file": "supermartijn642corelib-1.1.25-fabric-mc26.2.jar",
+  "size": 687844,
+  "url": "https://cdn.modrinth.com/data/rOUBggPv/versions/iM74Il9u/supermartijn642corelib-1.1.25-fabric-mc26.2.jar"
+ },
+ "supermartijn642s-config-lib": {
+  "version": "1.1.8a-fabric-mc26.2",
+  "file": "supermartijn642configlib-1.1.8a-fabric-mc26.2.jar",
+  "size": 206152,
+  "url": "https://cdn.modrinth.com/data/LN9BxssP/versions/iInTTGso/supermartijn642configlib-1.1.8a-fabric-mc26.2.jar"
+ },
+ "fusion-connected-textures": {
+  "version": "1.3.16-fabric-mc26.2",
+  "file": "fusion-1.3.16-fabric-mc26.2.jar",
+  "size": 952789,
+  "url": "https://cdn.modrinth.com/data/p19vrgc2/versions/bc67hCHk/fusion-1.3.16-fabric-mc26.2.jar"
+ },
+ "forge-config-api-port": {
+  "version": "26.2.1",
+  "file": "ForgeConfigAPIPort-v26.2.1-mc26.2.x-Fabric.jar",
+  "size": 609550,
+  "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/rSd3GiG8/ForgeConfigAPIPort-v26.2.1-mc26.2.x-Fabric.jar"
+ },
+ "puzzles-lib": {
+  "version": "26.2.4",
+  "file": "PuzzlesLib-v26.2.4-mc26.2.x-Fabric.jar",
+  "size": 1153533,
+  "url": "https://cdn.modrinth.com/data/QAGBst4M/versions/aNOJuoCM/PuzzlesLib-v26.2.4-mc26.2.x-Fabric.jar"
+ }
 }
