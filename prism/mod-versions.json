@@ -316,5 +316,47 @@
   "file": "PuzzlesLib-v26.2.4-mc26.2.x-Fabric.jar",
   "size": 1153533,
   "url": "https://cdn.modrinth.com/data/QAGBst4M/versions/aNOJuoCM/PuzzlesLib-v26.2.4-mc26.2.x-Fabric.jar"
+ },
+ "libipn": {
+  "version": "fabric-26.2-6.8.3",
+  "file": "libIPN-fabric-26.2-6.8.3.jar",
+  "size": 637800,
+  "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/SkvWSBFK/libIPN-fabric-26.2-6.8.3.jar"
+ },
+ "architectury-api": {
+  "version": "21.1.11+fabric",
+  "file": "architectury-fabric-21.1.11.jar",
+  "size": 624051,
+  "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/w3CUWoxd/architectury-fabric-21.1.11.jar"
+ },
+ "fabric-language-kotlin": {
+  "version": "1.14.2+kotlin.2.4.21",
+  "file": "fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar",
+  "size": 8142878,
+  "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/SKW1BTL3/fabric-language-kotlin-1.14.2%2Bkotlin.2.4.21.jar"
+ },
+ "delight-lib": {
+  "version": "26.06.23-26.2-fabric",
+  "file": "delightlib-26.06.23-26.2-fabric.jar",
+  "size": 61225,
+  "url": "https://cdn.modrinth.com/data/rmDY6fYt/versions/SjphfJS9/delightlib-26.06.23-26.2-fabric.jar"
+ },
+ "cristel-lib": {
+  "version": "fabric-26.2-3.1.13",
+  "file": "cristellib-fabric-26.2-3.1.13.jar",
+  "size": 588321,
+  "url": "https://cdn.modrinth.com/data/cl223EMc/versions/6cKPC8Up/cristellib-fabric-26.2-3.1.13.jar"
+ },
+ "balm": {
+  "version": "26.2.0.9+fabric-26.2",
+  "file": "balm-fabric-26.2-26.2.0.9.jar",
+  "size": 1196564,
+  "url": "https://cdn.modrinth.com/data/MBAkmtvl/versions/qLWYe5p7/balm-fabric-26.2-26.2.0.9.jar"
+ },
+ "shogi": {
+  "version": "26.2.0.8+fabric-26.2",
+  "file": "shogi-fabric-26.2-26.2.0.8.jar",
+  "size": 455591,
+  "url": "https://cdn.modrinth.com/data/bi4iCmsw/versions/kjPMnetX/shogi-fabric-26.2-26.2.0.8.jar"
  }
 }
