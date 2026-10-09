@@ -400,5 +400,11 @@
   "file": "mcw-windows-2.4.2-mc26.2fabric.jar",
   "size": 1402302,
   "url": "https://cdn.modrinth.com/data/C7I0BCni/versions/sNXCQQn1/mcw-windows-2.4.2-mc26.2fabric.jar"
+ },
+ "resourceful-lib": {
+  "version": "5.0.4",
+  "file": "ResourcefulLib-5.0.4.jar",
+  "size": 455301,
+  "url": "https://cdn.modrinth.com/data/G1hIVOrD/versions/4BbCbnE6/ResourcefulLib-5.0.4.jar"
  }
 }
