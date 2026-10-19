@@ -611,12 +611,6 @@
   "size": 363646,
   "url": "https://cdn.modrinth.com/data/51shyZVL/versions/D5oVCouK/moreculling-fabric-26.2-1.8.1.jar"
  },
- "inventory-sorting": {
-  "version": "3.0.1+fabric-26.2",
-  "file": "inventorysorter-fabric-3.0.1+mc26.2.jar",
-  "size": 3798183,
-  "url": "https://cdn.modrinth.com/data/5ibSyLAz/versions/D6W3Lrmj/inventorysorter-fabric-3.0.1%2Bmc26.2.jar"
- },
  "libipn": {
   "version": "fabric-26.2-6.9.0",
   "file": "libIPN-fabric-26.2-6.9.0.jar",
