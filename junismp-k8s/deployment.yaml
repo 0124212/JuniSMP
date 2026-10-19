@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: '8'
+    deployment.kubernetes.io/revision: '9'
   name: junismp
   namespace: minecraft
 spec:
@@ -70,7 +70,7 @@ spec:
         - name: DIFFICULTY
           value: normal
         - name: MOTD
-          value: "\xA76\xA7ljuni's smp\n\xA77ping @kutejuni for whitelist"
+          value: "\xA76\xA7ljuni's smp\n\xA77my little world! ping @kutejuni for whitelist"
         - name: ENABLE_RCON
           value: 'true'
         - name: RCON_PASSWORD
