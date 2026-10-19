@@ -1,8 +1,8 @@
 # JuniSMP modpack
 
 Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25. Client packs ship as
-Prism Import zips — grab the latest from **Releases** (103 pinned entries in
-`prism/mod-versions.json`: 87 shared with the server + 16 client-only
+Prism Import zips — grab the latest from **Releases** (105 pinned entries in
+`prism/mod-versions.json`: 87 shared with the server + 18 client-only
 QoL/performance additions, see below).
 
 **Two live deployments, this repo is the single source of truth for both:**
@@ -133,13 +133,17 @@ booted this compose file — several entries would have failed immediately):
   `supermartijn642s-config-lib`, `fusion-connected-textures`, `cristel-lib`,
   `fabric-language-kotlin`, `balm`, `shogi`. All added to `MODRINTH_PROJECTS`.
 
-Client-only (in the Prism zip, NOT on the server; 16 entries, part of the
-103 pinned total): sodium, sodium-extra, iris, reeses-sodium-options, rei,
+Client-only (in the Prism zip, NOT on the server; 18 entries, part of the
+105 pinned total): sodium, sodium-extra, iris, reeses-sodium-options, rei,
 immediatelyfast, entityculling, inventory-sorting, inventory-profiles-next,
 inventory-management, mouse-tweaks, xaeros-minimap, xaeros-world-map,
-shulkerboxtooltip, chat-heads, moreculling — moreculling bundles with
-entityculling + immediatelyfast as the client perf pack. Don't add these to
-`MODRINTH_PROJECTS` (server side). **2026-10-18: these got silently dropped
+shulkerboxtooltip, chat-heads, moreculling, libipn, architectury-api —
+moreculling bundles with entityculling + immediatelyfast as the client perf
+pack; libipn/architectury-api are transitive deps of
+inventory-profiles-next/rei that Prism's own dependency checker flagged as
+missing (`libipn` needs 6.9.0–6.10 exclusive, `architectury-api` needs
+21.0.0+ — both added 2026-10-19). Don't add these to `MODRINTH_PROJECTS`
+(server side). **2026-10-18: these got silently dropped
 when `mod-versions.json` was regenerated from the server's own mod list
 during the repo consolidation — the server obviously doesn't need REI etc,
 but the file is the CLIENT pack and needs them layered back on top. Re-added

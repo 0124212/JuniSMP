@@ -616,5 +616,17 @@
   "file": "inventorysorter-fabric-3.0.1+mc26.2.jar",
   "size": 3798183,
   "url": "https://cdn.modrinth.com/data/5ibSyLAz/versions/D6W3Lrmj/inventorysorter-fabric-3.0.1%2Bmc26.2.jar"
+ },
+ "libipn": {
+  "version": "fabric-26.2-6.9.0",
+  "file": "libIPN-fabric-26.2-6.9.0.jar",
+  "size": 640838,
+  "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/gCGiN7gp/libIPN-fabric-26.2-6.9.0.jar"
+ },
+ "architectury-api": {
+  "version": "21.1.12+fabric",
+  "file": "architectury-fabric-21.1.12.jar",
+  "size": 624143,
+  "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ohb3PBGZ/architectury-fabric-21.1.12.jar"
  }
 }
