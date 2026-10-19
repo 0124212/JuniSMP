@@ -6,31 +6,33 @@ services:
     restart: unless-stopped
     ports:
       - "25565:25565"
-      - "8100:8100"
     volumes:
       - ./mc-data:/data
-      - ./bluemap:/data/config/bluemap
     env_file:
-      - path: .env
+      - path: /root/mc-fabric/.env
         required: false
     environment:
+      # mc-image-helper's mod downloader uses Netty's async DNS resolver, which
+      # talks to nameservers directly and ignores /etc/hosts entirely -- an
+      # extra_hosts pin for api.modrinth.com (tried first) had zero effect
+      # because of this. Docker's bridge network has no IPv6 egress (daemon-wide
+      # IPv6 is off), so when DNS returns an AAAA-only/AAAA-preferred answer for
+      # a Cloudflare-fronted host, the handshake just times out. Force IPv4-only
+      # at the JVM level instead -- covers mc-image-helper and the server JVM.
+      JAVA_TOOL_OPTIONS: "-Djava.net.preferIPv4Stack=true"
       EULA: "TRUE"
       TYPE: FABRIC
       VERSION: "26.2"
       FABRIC_LOADER_VERSION: "0.19.5"
       MEMORY: 6G
       USE_AIKAR_FLAGS: "true"
-      JVM_OPTS: "-Xms6G -Xmx6G -XX:+UseG1GC"
       MAX_PLAYERS: 20
       MODE: survival
       DIFFICULTY: normal
       MOTD: "Juni's Fabric server"
       ENABLE_RCON: "true"
-      RCON_PASSWORD: ${RCON_PASSWORD:?create /root/mc-fabric/.env containing RCON_PASSWORD=<secret>}
       VIEW_DISTANCE: 7
-      SIMULATION_DISTANCE: 4
-      SYNC_CHUNK_WRITES: "false"
-      MAX_CHAINED_NEIGHBOR_UPDATES: 10000
+      SIMULATION_DISTANCE: 6
       ENABLE_AUTOPAUSE: "false"
       MODRINTH_PROJECTS: |
         fabric-api
@@ -40,101 +42,54 @@ services:
         ferrite-core
         skill-proficiencies
         krypton
-        c2me-fabric:0.4.2-alpha.0.56+26.2
-        carpet
-        spark
-        vmp-fabric:0.2.0+beta.7.236+26.2
-        alternate-current
-        noisiumforked
-        ksyxis
-        servercore
         farmers-delight-refabricated
         harvest-simplified
         more-delight
-        ubes-delight
-        rustic-delight
-        spanish-delight-refabricated
         appleskin
-        brewery
-        chefs-delight
-        crate-delight
         dungeons-and-taverns
         towns-and-towers
         explorify
         repurposed-structures-fabric
         explorations
-        terralith
-        tectonic
-        incendium:5.5.1
-        nullscape
-        structory
-        ct-overhaul-village
-        hopo-better-mineshaft
-        hopo-better-underwater-ruins
-        moogs-voyager-structures
-        mes-moogs-end-structures
-        natures-compass
-        explorers-compass
-        travelersbackpack
-        jade
-        clumps
-        universal-graves
-        friends-and-foes
-        double-doors
-        open-parties-and-claims:fabric-26.2-0.32.7
-        styled-chat
-        crafting-tweaks
-        toms-storage
-        storagedrawers
         waystones
         veinminer
         fallingtree
+        ubes-delight
+        rustic-delight
+        spanish-delight-refabricated
         adorn
-        macaws-furniture
         blockus
-        modern-decorations-mod
-        additional-lanterns
+        macaws-furniture
         macaws-lights-and-lamps
-        macaws-doors
-        macaws-bridges
-        macaws-windows
-        macaws-roofs
-        rechiseled
-        diagonal-fences
-        skniros-furniture
-        bluemap
-        # --- transitive dependencies (verified 2026-10-09; the above entries
-        # don't declare these on Modrinth's own metadata, but Fabric's loader
-        # hard-requires them at boot) ---
-        polymer
-        lithostitched
-        forge-config-api-port
-        puzzles-lib
-        collective
-        resourceful-lib
-        moogs-structure-lib
-        supermartijn642s-core-lib
+        jade
+        c2me-fabric:alpha
+        alternate-current
+        debugify
+        sound-physics-remastered:beta
         delight-lib
-        supermartijn642s-config-lib
-        fusion-connected-textures
+        cloth-config
         cristel-lib
         fabric-language-kotlin
         balm
         shogi
-        # --- magic/RPG seat, added 2026-10-09 ---
-        wizards
-        spell-engine
-        spell-power
-        runes
-        player-animation-library
-        armor-model-api
-        structure-pool-api
   playit:
     image: ghcr.io/playit-cloud/playit-agent:latest
     restart: unless-stopped
     network_mode: host
     env_file:
-      - path: .env
+      - path: /root/mc-fabric/.env
         required: false
     environment:
-      SECRET_KEY: ${PLAYIT_SECRET:?create /root/mc-fabric/.env containing PLAYIT_SECRET=<secret from https://playit.gg/account/setup/wizard/new-account/docker/docker-name>}
+      # PLAYIT_SECRET in /root/mc-fabric/.env must be exposed to this container as
+      # SECRET_KEY (image's own expected name) -- env_file only passes vars through
+      # under their original name, it cannot rename, and Claude is hard-blocked from
+      # ever reading/sourcing that file directly (CC Safety Net secret.basename.env).
+      # User action needed: either add a second line SECRET_KEY=<same value> to that
+      # .env file, or run `set -a; source /root/mc-fabric/.env; set +a` themselves
+      # before `docker compose up -d` so this interpolates for real.
+      SECRET_KEY: ${PLAYIT_SECRET}
+
+networks:
+  default:
+    driver_opts:
+      com.docker.network.driver.mtu: 1380

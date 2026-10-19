@@ -1,19 +1,42 @@
 # JuniSMP modpack
 
 Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25. Client packs ship as
-Prism Import zips — grab the latest from **Releases** (48 pinned entries in
+Prism Import zips — grab the latest from **Releases** (87 pinned entries in
 `prism/mod-versions.json`).
+
+**Two live deployments, this repo is the single source of truth for both:**
+- **junismp** (production, `mc.junilab.xyz`, what people actually play on) —
+  runs via k3s on the `junilab` host, manifests in `junismp-k8s/`. The real
+  mod list lives in `junismp-k8s/deployment.yaml`'s `MODRINTH_PROJECTS` env
+  value — pulled fresh from the live cluster, not hand-maintained.
+- **mc-fabric** (secondary/test, on `ak`) — plain `docker compose`,
+  `mc-fabric/docker-compose.yml`. Smaller, separately-curated mod list; not
+  guaranteed to match junismp's.
+`prism/mod-versions.json` (the client pack) is built against **junismp's**
+mod list specifically — that's the one players need to match.
 
 ## Layout
 
-- `mc-fabric/docker-compose.yml` — server (`itzg/minecraft-server:java25`,
-  survival/normal, 6G + Aikar flags, RCON on, playit.gg tunnel sidecar).
-  Secrets via `.env` (see `mc-fabric/.env.example`) — never committed.
+- `junismp-k8s/` — the production server's real k8s manifests
+  (`deployment.yaml`, `service.yaml`, `service-bluemap.yaml`), pulled
+  directly from the live cluster on junilab. RCON password is a real k8s
+  Secret reference (`secretKeyRef`), never an inline value — safe to commit
+  as-is. Re-pull with `kubectl get deploy/svc -n minecraft <name> -o yaml`
+  after any live change (`kubectl patch`/`kubectl edit` don't update this
+  file automatically — that's exactly how it drifted out of sync before).
+- `mc-fabric/docker-compose.yml` — the ak test server
+  (`itzg/minecraft-server:java25`, survival/normal, 6G + Aikar flags, RCON
+  on, playit.gg tunnel sidecar). Secrets via `.env` (see
+  `mc-fabric/.env.example`) — never committed.
 - `prism/` — Prism Launcher metadata for the client pack: `instance.cfg`
   (JuniSMP, 4G), `mmc-pack.json` (MC + loader pins),
-  `mod-versions.json` (pinned client mod list with hashes/sizes/URLs).
+  `mod-versions.json` (pinned client mod list with hashes/sizes/URLs, built
+  against junismp's live mod list).
 - Full zips (`JuniSMP-v2/v3/v4.zip`, `JuniSMP-prism.zip`) live as release
-  assets, not in git (see `.gitignore`).
+  assets, not in git (see `.gitignore`). The old versioned local YAML
+  snapshots (`junismp-v4.yaml*` and friends, on junilab's own disk) are
+  retired now that this repo is the real source of truth — this repo wins
+  any conflict with those.
 
 ## Rebuilding the Prism zip
 
@@ -69,6 +92,18 @@ are client-required per Modrinth too — players must install them); maps: bluem
 pure redundant CPU contention with zero functional gain; bluemap kept as the
 more actively maintained of the two).
 (modernfix skipped: no MC 26.2 build — latest supports 26.1.2.)
+
+**Added 2026-10-18** (requested: more Stardew-Valley-style cozy/farm-life
+feel — seasons + NPCs, not just exploration/building): `serene-seasons`
+(26.2 builds beta-only, pinned `serene-seasons:beta`; `fabric-seasons` was
+considered first — has first-party Terralith/Delight compat addons — but has
+no 26.2 build at all, so it wasn't viable) + its hard dependency
+`glitchcore` (also beta-only on 26.2, pinned `glitchcore:beta` — Fabric's own
+loader error names the missing dependency directly, that's how this was
+found); `vanilla-npcs` (customizable mannequins — the closest thing
+available for NPC presence; note this is **not** a true Stardew-style
+dialogue/relationship/gift system — nothing at that depth has a 26.2 build
+yet, this is the honest ceiling right now, not a settled "good enough").
 
 **Verified working end-to-end 2026-10-09** (prior to this, nobody had actually
 booted this compose file — several entries would have failed immediately):
