@@ -569,12 +569,6 @@
   "size": 1485253,
   "url": "https://cdn.modrinth.com/data/O7RBXm3n/versions/oQFRysLk/InventoryProfilesNext-fabric-26.2-2.3.8.jar"
  },
- "inventory-management": {
-  "version": "2.0.2+26.2-fabric",
-  "file": "inventorymanagement-fabric-2.0.2+26.2.jar",
-  "size": 937105,
-  "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/PxZPDukH/inventorymanagement-fabric-2.0.2%2B26.2.jar"
- },
  "mouse-tweaks": {
   "version": "26.2-2.31-fabric",
   "file": "MouseTweaks-fabric-mc26.2-2.31.jar",

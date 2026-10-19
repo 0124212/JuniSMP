@@ -1,8 +1,8 @@
 # JuniSMP modpack
 
 Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25. Client packs ship as
-Prism Import zips — grab the latest from **Releases** (104 pinned entries in
-`prism/mod-versions.json`: 87 shared with the server + 17 client-only
+Prism Import zips — grab the latest from **Releases** (103 pinned entries in
+`prism/mod-versions.json`: 87 shared with the server + 16 client-only
 QoL/performance additions, see below).
 
 **Two live deployments, this repo is the single source of truth for both:**
@@ -133,21 +133,24 @@ booted this compose file — several entries would have failed immediately):
   `supermartijn642s-config-lib`, `fusion-connected-textures`, `cristel-lib`,
   `fabric-language-kotlin`, `balm`, `shogi`. All added to `MODRINTH_PROJECTS`.
 
-Client-only (in the Prism zip, NOT on the server; 17 entries, part of the
-104 pinned total): sodium, sodium-extra, iris, reeses-sodium-options, rei,
+Client-only (in the Prism zip, NOT on the server; 16 entries, part of the
+103 pinned total): sodium, sodium-extra, iris, reeses-sodium-options, rei,
 immediatelyfast, entityculling, inventory-profiles-next,
-inventory-management, mouse-tweaks, xaeros-minimap, xaeros-world-map,
+mouse-tweaks, xaeros-minimap, xaeros-world-map,
 shulkerboxtooltip, chat-heads, moreculling, libipn, architectury-api —
 moreculling bundles with entityculling + immediatelyfast as the client perf
 pack; libipn/architectury-api are transitive deps of
 inventory-profiles-next/rei that Prism's own dependency checker flagged as
 missing (`libipn` needs 6.9.0–6.10 exclusive, `architectury-api` needs
 21.0.0+ — both added 2026-10-19). Don't add these to `MODRINTH_PROJECTS`
-(server side). **`inventory-sorting` removed 2026-10-19:** redundant with
-`inventory-profiles-next` — both do inventory sorting and having two active
-at once was just confusing in-game (two separate sort UIs/keybinds).
-`inventory-profiles-next` is the one that stayed (its button row is built
-into every container GUI). **2026-10-18: these got silently dropped
+(server side). **Sorting UI settled on `inventory-profiles-next` alone,
+2026-10-19:** two other mods did overlapping inventory-sorting and both got
+dropped as redundant/confusing (two separate sort UIs active at once) —
+`inventory-sorting` (its own standalone UI) and `inventory-management`
+(adds a vertical button column down the side of every container).
+`inventory-profiles-next` is the one that stayed — its compact overlay
+icon (the "Sort inventory" button etc.) is built into every container GUI
+without adding a separate UI element. **2026-10-18: these got silently dropped
 when `mod-versions.json` was regenerated from the server's own mod list
 during the repo consolidation — the server obviously doesn't need REI etc,
 but the file is the CLIENT pack and needs them layered back on top. Re-added
