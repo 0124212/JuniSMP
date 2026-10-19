@@ -153,10 +153,7 @@ during the repo consolidation — the server obviously doesn't need REI etc,
 but the file is the CLIENT pack and needs them layered back on top. Re-added
 same day; if `mod-versions.json` is ever rebuilt from the server list again,
 remember this category has to be added back by hand, it has no server-side
-equivalent to derive it from.** (`inventory-sorting` — not `inventory-sorter`,
-the mod's actual Modrinth slug doesn't match its display name or jar
-filename; verify by resolving the project ID from an existing `url` field,
-not by guessing from the name, if this ever needs re-deriving.)
+equivalent to derive it from.**
 
 Client-required (in BOTH compose and the Prism zip — players must install):
 natures-compass, explorers-compass, travelersbackpack.
