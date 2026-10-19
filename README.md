@@ -19,12 +19,24 @@ mod list specifically — that's the one players need to match.
 ## Layout
 
 - `junismp-k8s/` — the production server's real k8s manifests
-  (`deployment.yaml`, `service.yaml`, `service-bluemap.yaml`), pulled
-  directly from the live cluster on junilab. RCON password is a real k8s
-  Secret reference (`secretKeyRef`), never an inline value — safe to commit
-  as-is. Re-pull with `kubectl get deploy/svc -n minecraft <name> -o yaml`
-  after any live change (`kubectl patch`/`kubectl edit` don't update this
-  file automatically — that's exactly how it drifted out of sync before).
+  (`deployment.yaml`, `service.yaml`, `service-bluemap.yaml`,
+  `backup-pvc.yaml`), pulled directly from the live cluster on junilab.
+  RCON password is a real k8s Secret reference (`secretKeyRef`), never an
+  inline value — safe to commit as-is. Re-pull with
+  `kubectl get deploy/svc -n minecraft <name> -o yaml` after any live change
+  (`kubectl patch`/`kubectl edit` don't update this file automatically —
+  that's exactly how it drifted out of sync before).
+  **Backups (added 2026-10-18):** `itzg/mc-backup` runs as a sidecar
+  container in the same pod, RCON-coordinated (`save-off`/tar/`save-on`
+  against the world, no corruption risk from backing up a live world) —
+  daily (`BACKUP_INTERVAL=24h`), keeps the last 7 (`PRUNE_BACKUPS_COUNT=7`,
+  `PRUNE_BACKUPS_DAYS=0` to disable the days-based pruner so count is the
+  only retention rule), writing `.tgz` files to the dedicated
+  `junismp-backup-data` PVC (`backup-pvc.yaml`, 10Gi, separate from the
+  world's own `junismp-data` PVC on purpose — a corrupted/deleted world
+  volume shouldn't also take out its own backups). No off-box copy yet —
+  this only protects against in-place world corruption/accidental
+  deletion, not total node loss.
 - `mc-fabric/docker-compose.yml` — the ak test server
   (`itzg/minecraft-server:java25`, survival/normal, 6G + Aikar flags, RCON
   on, playit.gg tunnel sidecar). Secrets via `.env` (see
