@@ -1,8 +1,9 @@
 # JuniSMP modpack
 
 Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25. Client packs ship as
-Prism Import zips — grab the latest from **Releases** (87 pinned entries in
-`prism/mod-versions.json`).
+Prism Import zips — grab the latest from **Releases** (103 pinned entries in
+`prism/mod-versions.json`: 87 shared with the server + 16 client-only
+QoL/performance additions, see below).
 
 **Two live deployments, this repo is the single source of truth for both:**
 - **junismp** (production, `mc.junilab.xyz`, what people actually play on) —
@@ -120,19 +121,25 @@ booted this compose file — several entries would have failed immediately):
   `supermartijn642s-config-lib`, `fusion-connected-textures`, `cristel-lib`,
   `fabric-language-kotlin`, `balm`, `shogi`. All added to `MODRINTH_PROJECTS`.
 
-Client-only (in the Prism zip, NOT on the server; 11 entries):
-sodium, sodium-extra, iris, reeses-sodium-options, rei, immediatelyfast,
-entityculling, inventory-sorter/profiles-next/management, mouse-tweaks.
-Don't add these to `MODRINTH_PROJECTS`.
+Client-only (in the Prism zip, NOT on the server; 16 entries, part of the
+103 pinned total): sodium, sodium-extra, iris, reeses-sodium-options, rei,
+immediatelyfast, entityculling, inventory-sorting, inventory-profiles-next,
+inventory-management, mouse-tweaks, xaeros-minimap, xaeros-world-map,
+shulkerboxtooltip, chat-heads, moreculling — moreculling bundles with
+entityculling + immediatelyfast as the client perf pack. Don't add these to
+`MODRINTH_PROJECTS` (server side). **2026-10-18: these got silently dropped
+when `mod-versions.json` was regenerated from the server's own mod list
+during the repo consolidation — the server obviously doesn't need REI etc,
+but the file is the CLIENT pack and needs them layered back on top. Re-added
+same day; if `mod-versions.json` is ever rebuilt from the server list again,
+remember this category has to be added back by hand, it has no server-side
+equivalent to derive it from.** (`inventory-sorting` — not `inventory-sorter`,
+the mod's actual Modrinth slug doesn't match its display name or jar
+filename; verify by resolving the project ID from an existing `url` field,
+not by guessing from the name, if this ever needs re-deriving.)
 
-Client-required (in BOTH compose and the Prism zip — players must install;
-part of the 42 pinned entries): natures-compass, explorers-compass,
-travelersbackpack.
-
-Client-only extras (Prism zip only; part of the 48 pinned entries):
-xaeros-minimap, xaeros-world-map, shulkerboxtooltip, chat-heads,
-moreculling — moreculling bundles with entityculling + immediatelyfast as
-the client perf pack.
+Client-required (in BOTH compose and the Prism zip — players must install):
+natures-compass, explorers-compass, travelersbackpack.
 
 > Next: simple-voice-chat — HELD for a separate test pass (needs a UDP
 > port exposed + both-side install). Not in compose or the pack yet.
