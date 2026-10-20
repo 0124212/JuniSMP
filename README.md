@@ -16,6 +16,10 @@ decision log behind the current mod list and infra.
   Auto-rebuilt on every pack change, so this link is always current.
 - **Live map:** `map.junilab.xyz` (3D, BlueMap) — behind the same login as
   the rest of junilab.xyz.
+- **Mod guide:** [`docs/mod-guide.md`](docs/mod-guide.md) — what the less
+  obvious mods actually do, with real wiki/docs links, grouped by
+  category (sorting, storage, the Wizards spell system, farming/seasons,
+  exploration, worldgen).
 - **Visuals:** Iris + Sodium are installed, but no shader is bundled by
   default — pick your own and drop it in `.minecraft/shaderpacks/` (taste
   and GPU budget vary too much to force one on everyone). A resource pack
