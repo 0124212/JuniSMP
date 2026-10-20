@@ -12,7 +12,9 @@
 # is staged in a temp dir. --strict fails if any manifest jar is still missing
 # (CI); without it, missing jars are warnings only (local dry-run with a subset).
 #
-# Zip layout (Prism import): mmc-pack.json + instance.cfg at root, mods/*.jar.
+# Zip layout (Prism import): mmc-pack.json + instance.cfg + junismp-earth.png
+# at root (the icon file must sit at root, matching instance.cfg's iconKey,
+# for Prism to pick it up automatically on import), mods/*.jar.
 set -euo pipefail
 cd "$(dirname "$0")/.."   # repo root
 
@@ -31,6 +33,7 @@ case "$OUT" in /*) ;; *) OUT="$PWD/$OUT" ;; esac  # absolutize (we cd around bel
 
 [ -f prism/mmc-pack.json ] || { echo "missing prism/mmc-pack.json" >&2; exit 1; }
 [ -f prism/instance.cfg ] || { echo "missing prism/instance.cfg" >&2; exit 1; }
+[ -f prism/junismp-earth.png ] || { echo "missing prism/junismp-earth.png" >&2; exit 1; }
 [ -d "$MODS_DIR" ] || { echo "missing mods dir: $MODS_DIR" >&2; exit 1; }
 
 STAGE="$(mktemp -d)"
@@ -64,8 +67,8 @@ EOF
 
 mkdir -p "$(dirname "$OUT")"
 rm -f "$OUT"
-cp prism/mmc-pack.json prism/instance.cfg "$STAGE/"
-(cd "$STAGE" && zip -q -r "$OUT" mmc-pack.json instance.cfg .minecraft)
+cp prism/mmc-pack.json prism/instance.cfg prism/junismp-earth.png "$STAGE/"
+(cd "$STAGE" && zip -q -r "$OUT" mmc-pack.json instance.cfg junismp-earth.png .minecraft)
 
 echo "--- $OUT ($(stat -c%s "$OUT") bytes) ---"
 unzip -l "$OUT" | head -8

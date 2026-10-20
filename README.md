@@ -1,9 +1,21 @@
 # JuniSMP modpack
 
+[![prism-release](https://github.com/0124212/JuniSMP/actions/workflows/prism-release.yml/badge.svg)](https://github.com/0124212/JuniSMP/actions/workflows/prism-release.yml)
+
 Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25. Client packs ship as
 Prism Import zips — grab the latest from **Releases** (103 pinned entries in
 `prism/mod-versions.json`: 87 shared with the server + 16 client-only
-QoL/performance additions, see below).
+QoL/performance additions, see below). See `CHANGELOG.md` for the dated
+decision log behind the current mod list and infra.
+
+## Join
+
+- **Server:** `mc.junilab.xyz` — ping **@kutejuni** for whitelist.
+- **Modpack:** [latest Prism Import zip](https://github.com/0124212/JuniSMP/releases/download/prism-latest/JuniSMP-prism.zip)
+  — in Prism Launcher: **Add Instance → Import → From Zip**, paste that URL.
+  Auto-rebuilt on every pack change, so this link is always current.
+- **Live map:** `map.junilab.xyz` (3D, BlueMap) — behind the same login as
+  the rest of junilab.xyz.
 
 **Two live deployments, this repo is the single source of truth for both:**
 - **junismp** (production, `mc.junilab.xyz`, what people actually play on) —
@@ -25,31 +37,21 @@ mod list specifically — that's the one players need to match.
   inline value — safe to commit as-is. Re-pull with
   `kubectl get deploy/svc -n minecraft <name> -o yaml` after any live change
   (`kubectl patch`/`kubectl edit` don't update this file automatically —
-  that's exactly how it drifted out of sync before).
-  **Backups (added 2026-10-18):** `itzg/mc-backup` runs as a sidecar
-  container in the same pod, RCON-coordinated (`save-off`/tar/`save-on`
-  against the world, no corruption risk from backing up a live world) —
-  daily (`BACKUP_INTERVAL=24h`), keeps the last 7 (`PRUNE_BACKUPS_COUNT=7`,
-  `PRUNE_BACKUPS_DAYS=0` to disable the days-based pruner so count is the
-  only retention rule), writing `.tgz` files to the dedicated
-  `junismp-backup-data` PVC (`backup-pvc.yaml`, 10Gi, separate from the
-  world's own `junismp-data` PVC on purpose — a corrupted/deleted world
-  volume shouldn't also take out its own backups). No off-box copy yet —
-  this only protects against in-place world corruption/accidental
-  deletion, not total node loss.
+  that's exactly how it drifted out of sync before). Daily, auto-pruned
+  world backups run as a sidecar (`itzg/mc-backup`) — see `CHANGELOG.md`
+  for how it's configured.
 - `mc-fabric/docker-compose.yml` — the ak test server
   (`itzg/minecraft-server:java25`, survival/normal, 6G + Aikar flags, RCON
   on, playit.gg tunnel sidecar). Secrets via `.env` (see
   `mc-fabric/.env.example`) — never committed.
 - `prism/` — Prism Launcher metadata for the client pack: `instance.cfg`
-  (JuniSMP, 4G), `mmc-pack.json` (MC + loader pins),
-  `mod-versions.json` (pinned client mod list with hashes/sizes/URLs, built
-  against junismp's live mod list).
-- Full zips (`JuniSMP-v2/v3/v4.zip`, `JuniSMP-prism.zip`) live as release
-  assets, not in git (see `.gitignore`). The old versioned local YAML
-  snapshots (`junismp-v4.yaml*` and friends, on junilab's own disk) are
-  retired now that this repo is the real source of truth — this repo wins
-  any conflict with those.
+  (JuniSMP, 4G, custom icon via `iconKey=junismp-earth`), `mmc-pack.json`
+  (MC + loader pins), `mod-versions.json` (pinned client mod list with
+  hashes/sizes/URLs, built against junismp's live mod list),
+  `junismp-earth.png` (instance icon, picked up automatically by Prism on
+  import since it sits at the zip root matching `iconKey`).
+- Full zips (`JuniSMP-prism.zip`) live as release assets, not in git (see
+  `.gitignore`).
 
 ## Rebuilding the Prism zip
 
@@ -100,38 +102,10 @@ skniros-furniture (picked over betterdeco — pick one; rechiseled +
 diagonal-fences + skniros-furniture also required client-side — in the
 Prism pack; macaws x4 + friends-and-foes + chefs-delight + crate-delight
 are client-required per Modrinth too — players must install them); maps: bluemap
-(:8100 3D web map), config persisted in ./bluemap. **pl3xmap dropped 2026-10-09**
-(junilab is only 2 vCPU — two full map renderers running simultaneously was
-pure redundant CPU contention with zero functional gain; bluemap kept as the
-more actively maintained of the two).
+(:8100 3D web map, publicly at `map.junilab.xyz`), config persisted in
+./bluemap (`pl3xmap` dropped — see `CHANGELOG.md`); seasons/npcs:
+serene-seasons (+ hard dep glitchcore), vanilla-npcs.
 (modernfix skipped: no MC 26.2 build — latest supports 26.1.2.)
-
-**Added 2026-10-18** (requested: more Stardew-Valley-style cozy/farm-life
-feel — seasons + NPCs, not just exploration/building): `serene-seasons`
-(26.2 builds beta-only, pinned `serene-seasons:beta`; `fabric-seasons` was
-considered first — has first-party Terralith/Delight compat addons — but has
-no 26.2 build at all, so it wasn't viable) + its hard dependency
-`glitchcore` (also beta-only on 26.2, pinned `glitchcore:beta` — Fabric's own
-loader error names the missing dependency directly, that's how this was
-found); `vanilla-npcs` (customizable mannequins — the closest thing
-available for NPC presence; note this is **not** a true Stardew-style
-dialogue/relationship/gift system — nothing at that depth has a 26.2 build
-yet, this is the honest ceiling right now, not a settled "good enough").
-
-**Verified working end-to-end 2026-10-09** (prior to this, nobody had actually
-booted this compose file — several entries would have failed immediately):
-- `c2me-fabric`, `vmp-fabric`, `incendium`, `open-parties-and-claims` only
-  publish alpha/beta builds for 26.2; `MODRINTH_PROJECTS` defaults to
-  release-only, so each needs an explicit `slug:version` pin (already applied
-  above). The README already flagged incendium and open-parties-and-claims as
-  beta-only — the pins just weren't in the actual compose file.
-- 15 transitive dependencies are hard-required by Fabric's loader at boot but
-  aren't declared by Modrinth metadata for the mods above, so itzg's
-  auto-resolver never pulls them: `polymer`, `lithostitched`,
-  `forge-config-api-port`, `puzzles-lib`, `collective`, `resourceful-lib`,
-  `moogs-structure-lib`, `supermartijn642s-core-lib`, `delight-lib`,
-  `supermartijn642s-config-lib`, `fusion-connected-textures`, `cristel-lib`,
-  `fabric-language-kotlin`, `balm`, `shogi`. All added to `MODRINTH_PROJECTS`.
 
 Client-only (in the Prism zip, NOT on the server; 16 entries, part of the
 103 pinned total): sodium, sodium-extra, iris, reeses-sodium-options, rei,
@@ -140,23 +114,10 @@ mouse-tweaks, xaeros-minimap, xaeros-world-map,
 shulkerboxtooltip, chat-heads, moreculling, libipn, architectury-api —
 moreculling bundles with entityculling + immediatelyfast as the client perf
 pack; libipn/architectury-api are transitive deps of
-inventory-profiles-next/rei that Prism's own dependency checker flagged as
-missing (`libipn` needs 6.9.0–6.10 exclusive, `architectury-api` needs
-21.0.0+ — both added 2026-10-19). Don't add these to `MODRINTH_PROJECTS`
-(server side). **Sorting UI settled on `inventory-profiles-next` alone,
-2026-10-19:** two other mods did overlapping inventory-sorting and both got
-dropped as redundant/confusing (two separate sort UIs active at once) —
-`inventory-sorting` (its own standalone UI) and `inventory-management`
-(adds a vertical button column down the side of every container).
-`inventory-profiles-next` is the one that stayed — its compact overlay
-icon (the "Sort inventory" button etc.) is built into every container GUI
-without adding a separate UI element. **2026-10-18: these got silently dropped
-when `mod-versions.json` was regenerated from the server's own mod list
-during the repo consolidation — the server obviously doesn't need REI etc,
-but the file is the CLIENT pack and needs them layered back on top. Re-added
-same day; if `mod-versions.json` is ever rebuilt from the server list again,
-remember this category has to be added back by hand, it has no server-side
-equivalent to derive it from.**
+inventory-profiles-next/rei (Prism's dependency checker flags these as
+missing on import if absent). Don't add these to `MODRINTH_PROJECTS`
+(server side) — they have no server-side equivalent to derive them from if
+`mod-versions.json` is ever rebuilt from the server list again.
 
 Client-required (in BOTH compose and the Prism zip — players must install):
 natures-compass, explorers-compass, travelersbackpack.
@@ -175,3 +136,9 @@ natures-compass, explorers-compass, travelersbackpack.
 cp mc-fabric/.env.example /root/mc-fabric/.env  # fill in real secrets
 docker compose -f /root/mc-fabric/docker-compose.yml up -d
 ```
+
+## License
+
+MIT for this repo's own files (manifests, scripts, configs) — see
+`LICENSE`. Does not cover the third-party mods themselves; each is under
+its own license on Modrinth.
