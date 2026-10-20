@@ -5,6 +5,14 @@ current-state reference (what's installed and why), see `README.md`.
 
 ## 2026-10-19
 
+- Added `prism/resourcepacks.json` (same pinning shape as
+  `mod-versions.json`) and taught `build-prism-zip.sh` to stage it into
+  `.minecraft/resourcepacks/`. Bundled `Pixel Perfection Fidelity` (cozy
+  medieval-style retexture, real MC 26.2 build) as the default resource
+  pack — not auto-enabled by Minecraft, players turn it on once via
+  Options → Resource Packs. Deliberately did **not** bundle a shader:
+  Iris/Sodium are already installed, but shader taste and GPU budget vary
+  too much per player to force one on everyone by default.
 - Removed `inventory-sorting` and `inventory-management` from the client
   pack — both overlapped with `inventory-profiles-next` on inventory
   sorting, and having more than one active at once meant multiple

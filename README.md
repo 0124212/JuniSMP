@@ -16,6 +16,13 @@ decision log behind the current mod list and infra.
   Auto-rebuilt on every pack change, so this link is always current.
 - **Live map:** `map.junilab.xyz` (3D, BlueMap) — behind the same login as
   the rest of junilab.xyz.
+- **Visuals:** Iris + Sodium are installed, but no shader is bundled by
+  default — pick your own and drop it in `.minecraft/shaderpacks/` (taste
+  and GPU budget vary too much to force one on everyone). A resource pack
+  (`Pixel Perfection Fidelity`, a cozy medieval-style retexture) *is*
+  bundled in `.minecraft/resourcepacks/`, but Minecraft doesn't
+  auto-enable resource packs just by having the file present — turn it on
+  once via **Options → Resource Packs**.
 
 **Two live deployments, this repo is the single source of truth for both:**
 - **junismp** (production, `mc.junilab.xyz`, what people actually play on) —
@@ -49,7 +56,11 @@ mod list specifically — that's the one players need to match.
   (MC + loader pins), `mod-versions.json` (pinned client mod list with
   hashes/sizes/URLs, built against junismp's live mod list),
   `junismp-earth.png` (instance icon, picked up automatically by Prism on
-  import since it sits at the zip root matching `iconKey`).
+  import since it sits at the zip root matching `iconKey`),
+  `resourcepacks.json` (same pinning shape as `mod-versions.json`, staged
+  into `.minecraft/resourcepacks/` instead of `.minecraft/mods/` by
+  `build-prism-zip.sh` — not enabled by Minecraft automatically, players
+  turn it on via Options → Resource Packs).
 - Full zips (`JuniSMP-prism.zip`) live as release assets, not in git (see
   `.gitignore`).
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Build the Prism Launcher import zip for JuniSMP.
 #
-# Single truth: prism/mod-versions.json (pinned mod list: file/version/size/url).
+# Single truth: prism/mod-versions.json (pinned mod list: file/version/size/url)
+# and prism/resourcepacks.json (same shape, for .minecraft/resourcepacks/).
 # Never commit the zip itself — it ships as a GitHub Release asset only (*.zip is gitignored).
 #
 # Usage:
@@ -34,32 +35,41 @@ case "$OUT" in /*) ;; *) OUT="$PWD/$OUT" ;; esac  # absolutize (we cd around bel
 [ -f prism/mmc-pack.json ] || { echo "missing prism/mmc-pack.json" >&2; exit 1; }
 [ -f prism/instance.cfg ] || { echo "missing prism/instance.cfg" >&2; exit 1; }
 [ -f prism/junismp-earth.png ] || { echo "missing prism/junismp-earth.png" >&2; exit 1; }
+[ -f prism/resourcepacks.json ] || { echo "missing prism/resourcepacks.json" >&2; exit 1; }
 [ -d "$MODS_DIR" ] || { echo "missing mods dir: $MODS_DIR" >&2; exit 1; }
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
-mkdir -p "$STAGE/.minecraft/mods"
+mkdir -p "$STAGE/.minecraft/mods" "$STAGE/.minecraft/resourcepacks"
 
-# Stage exactly the manifest set: local jars where present, URL downloads for
-# the rest (staging only — the source dir is never modified).
+# Stage exactly the manifest sets: local files where present, URL downloads
+# for the rest (staging only — source dirs are never modified). Mods and
+# resource packs use the same manifest shape (file/version/size/url), just
+# different destination folders.
 STRICT="$STRICT" STAGE="$STAGE" MODS_DIR="$MODS_DIR" python3 - <<'EOF'
 import json, os, shutil, urllib.request
 stage, strict, src = os.environ['STAGE'], os.environ['STRICT'] == '1', os.environ['MODS_DIR']
 fails = []
-man = json.load(open('prism/mod-versions.json'))
-for slug, e in man.items():
-    dest = os.path.join(stage, '.minecraft', 'mods', e['file'])
-    local = os.path.join(src, e['file'])
-    if os.path.exists(local):
-        shutil.copy(local, dest)
-        assert os.path.getsize(dest) == e['size'], f"size mismatch (stale local jar?): {e['file']}"
-        continue
-    if 'url' not in e:
-        fails.append(f"{slug}: {e['file']} (no url in manifest — add jar manually)")
-        continue
-    print(f"downloading {e['file']} ...")
-    urllib.request.urlretrieve(e['url'], dest)
-    assert os.path.getsize(dest) == e['size'], f"size mismatch: {e['file']}"
+
+def stage_manifest(manifest_path, dest_subdir, local_dir):
+    man = json.load(open(manifest_path))
+    for slug, e in man.items():
+        dest = os.path.join(stage, '.minecraft', dest_subdir, e['file'])
+        local = os.path.join(local_dir, e['file']) if local_dir else None
+        if local and os.path.exists(local):
+            shutil.copy(local, dest)
+            assert os.path.getsize(dest) == e['size'], f"size mismatch (stale local file?): {e['file']}"
+            continue
+        if 'url' not in e:
+            fails.append(f"{slug}: {e['file']} (no url in manifest — add file manually)")
+            continue
+        print(f"downloading {e['file']} ...")
+        urllib.request.urlretrieve(e['url'], dest)
+        assert os.path.getsize(dest) == e['size'], f"size mismatch: {e['file']}"
+
+stage_manifest('prism/mod-versions.json', 'mods', src)
+stage_manifest('prism/resourcepacks.json', 'resourcepacks', None)
+
 for f in fails:
     print(f"WARN missing: {f}")
 exit(1 if strict and fails else 0)
@@ -73,3 +83,4 @@ cp prism/mmc-pack.json prism/instance.cfg prism/junismp-earth.png "$STAGE/"
 echo "--- $OUT ($(stat -c%s "$OUT") bytes) ---"
 unzip -l "$OUT" | head -8
 echo "jars in zip: $(unzip -l "$OUT" | grep -c '\.jar$') (manifest pins $(python3 -c "import json;print(len(json.load(open('prism/mod-versions.json'))))"))"
+echo "resourcepacks in zip: $(unzip -l "$OUT" | grep -c 'resourcepacks/.*\.zip$') (manifest pins $(python3 -c "import json;print(len(json.load(open('prism/resourcepacks.json'))))"))"
