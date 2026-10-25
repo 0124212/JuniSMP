@@ -4,6 +4,45 @@ Not every mod in the pack needs an explanation — most are drop-in QoL or
 visual. This covers the ones with actual mechanics worth reading up on.
 Full pinned mod list: `prism/mod-versions.json` in the repo.
 
+## Skills & progression
+
+- **Skill Proficiencies** — the server's mcMMO-style progression system: 15
+  skills (Mining, Woodcutting, Harvesting, Excavation, Fishing, Combat, Arms
+  Mastery, Archery, Defence, Acrobatics, Athletics, Sneaking, Smithing,
+  Alchemy, Enchanting) level 0→100 just from playing normally — no grinding
+  menus, no new currency, no gated gear. Every level gives a real passive
+  bonus in that same activity, and bonuses stack **additively** with vanilla
+  enchantments (a Fortune II pickaxe at Mining 60 mines like Fortune V).
+  Check your levels and what each one currently gives you from the **Skills
+  tab in your inventory screen** — it lists exactly what trains each skill
+  and what you're getting, no wiki needed. A couple of examples: Mining 100
+  = +100% pickaxe break speed and +5 Fortune; Archery 100 = -30% bow draw
+  time and arrows ricochet to two extra targets.
+  [Modrinth](https://modrinth.com/mod/skill-proficiencies) ·
+  [Source](https://github.com/balovich-matje/specialities)
+
+## Mining & tools
+
+- **Hammer Enchantment** — a real enchantment, not a separate tool. Goes on
+  pickaxes, axes, or shovels; get it from an enchanting table, loot chests,
+  or villager trades, up to level III. Breaking one block also breaks
+  matching blocks around it:
+  - **Level I** — one extra block, straight behind the one you broke.
+  - **Level II** — a 3-wide line perpendicular to your mining direction (3
+    blocks total per swing).
+  - **Level III** — the full 3x3 face around the block you broke, adjusted
+    automatically whether you're mining up, down, or sideways.
+  Stacks fine with Fortune/Silk Touch and the Smelting/Magnetic
+  enchantments. Doesn't replace **VeinMiner** below — Hammer clears a flat
+  area regardless of block type, VeinMiner chains connected blocks of the
+  *same* type (ore veins); reach for whichever fits the job.
+  [Modrinth](https://modrinth.com/datapack/hammer-enchantment) ·
+  [Source](https://github.com/lullaby6/data-packs/tree/main/_enchantments)
+
+  > This one's a **datapack**, not a mod — it lives in the world save, not
+  > `.minecraft/mods`. Nothing to install on your end; it just works once
+  > you're on the server.
+
 ## Sorting & inventory
 
 - **Inventory Profiles Next** — the sort/restock buttons built into every
@@ -70,7 +109,8 @@ Full pinned mod list: `prism/mod-versions.json` in the repo.
   [Wiki](https://github.com/Tiviacz1337/Travelers-Backpack/wiki)
 - **VeinMiner** — hold the keybind while mining to break a whole
   connected vein of ore at once (configurable, doesn't apply to
-  everything).
+  everything). See **Hammer Enchantment** above for flat-area clearing
+  instead of vein-chaining.
   [Source](https://github.com/MiraculixxT/Veinminer)
 
 ## Worldgen (why the terrain looks like this)
