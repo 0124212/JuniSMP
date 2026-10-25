@@ -2,18 +2,25 @@
 
 [![prism-release](https://github.com/0124212/JuniSMP/actions/workflows/prism-release.yml/badge.svg)](https://github.com/0124212/JuniSMP/actions/workflows/prism-release.yml)
 
-Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25. Client packs ship as
-Prism Import zips — grab the latest from **Releases** (103 pinned entries in
-`prism/mod-versions.json`: 87 shared with the server + 16 client-only
-QoL/performance additions, see below). See `CHANGELOG.md` for the dated
-decision log behind the current mod list and infra.
+Fabric SMP on **MC 26.2**, loader **0.19.5**, Java 25.
 
-## Join
+## Playing on the server? Start here
+
+**→ [GETTING-STARTED.md](GETTING-STARTED.md)** — install, import the pack,
+get whitelisted, connect. Five steps, no infra knowledge required.
+
+Everything below this point is reference detail / maintaining the server
+and pack, not needed just to join.
+
+## Join (reference)
 
 - **Server:** `mc.junilab.xyz` — ping **@kutejuni** for whitelist.
 - **Modpack:** [latest Prism Import zip](https://github.com/0124212/JuniSMP/releases/download/prism-latest/JuniSMP-prism.zip)
   — in Prism Launcher: **Add Instance → Import → From Zip**, paste that URL.
-  Auto-rebuilt on every pack change, so this link is always current.
+  Auto-rebuilt on every pack change, so this link is always current. 103
+  pinned entries in `prism/mod-versions.json`: 87 shared with the server +
+  16 client-only QoL/performance additions, see below. See `CHANGELOG.md`
+  for the dated decision log behind the current mod list and infra.
 - **Live map:** `map.junilab.xyz` (3D, BlueMap) — behind the same login as
   the rest of junilab.xyz.
 - **Mod guide:** [`docs/mod-guide.md`](docs/mod-guide.md) — what the less
